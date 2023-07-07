@@ -40,3 +40,6 @@ We are Team Brainstorm, consisting of 6 passionate individuals with diverse back
 | Rancy       | Backend/DB             | Product Owner       |
 | Ronak       | Backend/DB             | Quality Manager     |
 
+## Project WIKI:
+
+The project WIKI records our MoMS - [Project WIKI](https://github.com/nmnKumar/Brainstorm-Soen6011summer2023/wiki)
