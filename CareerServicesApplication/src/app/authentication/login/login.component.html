@@ -1,0 +1,54 @@
+<div class="container-fluid set_alignment">
+
+
+  <p-card header="Login" [style]="{ width: '360px' }">
+    <ng-template pTemplate="header">
+      <img alt="Card"
+        src="https://img.freepik.com/free-vector/privacy-policy-concept-illustration_114360-7853.jpg?w=740&t=st=1689032177~exp=1689032777~hmac=3f9599f86a473d5b9a3c08340d5c2caa5fc655f090099366ef5ae7e089d30fc8" />
+    </ng-template>
+
+    <div>
+
+      <div class="col-xs-12 ">
+        <form [formGroup]="loginForm" autocomplete="false" name="loginForm">
+
+
+          <div class="set_input">
+          <span class="p-input-icon-left ">
+            <i class="pi pi-user"></i>
+            <input type="text" pInputText name="email" />
+          </span>
+        </div>
+        <div class="set_input">
+          <p-password name="password">
+
+            <ng-template pTemplate="footer">
+              <p-divider></p-divider>
+              <p class="mt-2">Suggestions</p>
+              <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
+                <li>At least one lowercase</li>
+                <li>At least one uppercase</li>
+                <li>At least one numeric</li>
+                <li>Minimum 8 characters</li>
+              </ul>
+            </ng-template>
+          </p-password>
+        </div>
+          <div class="card flex justify-content-center" style="margin-top: 7px;">
+            <p-toast></p-toast>
+            <button type="button" pButton pRipple (click)="verify()" label="Submit"></button>
+          </div>
+
+
+
+
+        </form>
+      </div>
+
+
+
+
+    </div>
+  </p-card>
+
+</div>

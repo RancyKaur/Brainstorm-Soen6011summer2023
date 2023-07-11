@@ -1,0 +1,102 @@
+$color-primary: var(--blue);
+$color-secondary: var(--black);
+$color-tertiary: var(--gray);
+$color-section: #f5f6f7;
+
+$color-blue: var(--blue);
+$color-red: var(--red);
+$color-graph-label: var(--graph-label);
+$color-graph-fill: var(--graph-fill);
+$color-black: var(--black);
+$color-light-black: var(--light-black);
+$color-gray: var(--gray);
+$color-gray-dark: var(--gray-dark);
+$color-light-gray: var(--light-gray);
+$color-orange: var(--orange);
+$color-radio: $color-blue;
+$color-white: var(--white);
+$color-gray-light: var(--gray-light);
+$color-light-gray-back: var(--light-gray-back);
+$color-dark-gray-back: var(--dark-gray-back);
+$color-light-background: var(--light-background);
+$color-blue-light: var(--blue-light);
+$color-blue-border: #a6d8ff;
+$color-button: var(--blue);
+$color-pink: var(--pink);
+//table
+$color-table-hover: #f4f9fe; // rgba(166, 216, 255, 0.3);
+$color-table-heading: #979797;
+$color-table-data: #4a4a4a;
+// font names
+$proxima-reg: "ProximaNova-Regular";
+$proxima-thin: "ProximaNova-Thin";
+$proxima-semi-bold: "ProximaNova-Semi-Bold";
+$proxima-bold: "ProximaNova-Bold";
+$mont-reg: "Montserrat-Regular";
+$mont-light: "Montserrat-Light";
+$heading-font-color: #9b9b9b; // #9b9b9b;
+//$color-code-homepage: #474747;
+//$modal-small-width: 440px;
+
+//Box Variables
+$modal-lg: 900px;
+$modal-sm: 440px;
+$modal-md: 600px;
+
+$color-background-box: #fff ; //rgba(250, 250, 250, 0.75);
+$font-size-box-heading: 14px;
+$font-size-label-heading: 10px;
+$font-size-label-value: 12px;
+$color-box-heading: #474747;
+$color-box-label: #9b9b9b;
+
+
+// $color-box-label:#474747;
+$color-box-value: #474747;
+//order status
+$color-order-pending: #e91e63;
+$color-order-completed: #4caf50;
+$color-order-cancelled: #7266ba;
+$color-order-dispatched: #ff9800;
+
+$color-pending-order: #f89300;
+$color-dispatched-order: #2496ff;
+
+$side-bar-category-background: gba(166, 216, 255, 0.29);
+$color-sidebar-black: var(--sidebar-black);
+$color-sidebar-hover-black: var(--sidebar-hover-black);
+
+// color for action in table
+$color-action-list:  #bdbcbc;
+//header height
+$header-height: 70px;
+/*
+Yelo ugly colors
+$color-order-pending: #166bd3;
+$color-order-completed: #66d02a;
+$color-order-cancelled: #cb3529;
+$color-order-dispatched: #166bd3;
+*/
+
+/*Download and install polyfill for IE*/
+:root {
+  --blue: #16449b;;
+  --black: #282828;
+  --red: Red;
+  --gray: #e2e4e6;
+  --gray-dark: #979797;
+  --gray-light: #585858;
+  --light-gray: #d3d3d3;
+  --orange: #ff8f00;
+  --white: #ffffff;
+  --light-black: #282828;
+  --sidebar-black: #1c1c1c;
+  --sidebar-hover-black: #282828;
+  --light-gray-back: #f7f7f7;
+  --dark-gray-back: #ecebeb;
+  --graph-label: #2496ff;
+  --graph-fill: #e0a7a7;
+  --light-background: #f9f9f9;
+  --blue-light: #f4f6f8;
+  --pink: #f7b8ae;
+}

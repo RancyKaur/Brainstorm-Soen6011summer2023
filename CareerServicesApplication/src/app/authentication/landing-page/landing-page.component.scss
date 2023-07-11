@@ -1,0 +1,28 @@
+*{
+  margin:0px;
+  padding: 0px;
+}
+
+.set_alignment{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+  background-color: #f3f2f1;
+}
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+.set_button_align{
+  ::ng-deep .p-button{
+  width: 100% !important;
+  margin: unset !important;
+  margin-bottom: 5px !important;
+  }
+}
