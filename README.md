@@ -23,7 +23,6 @@ We are Team Brainstorm, consisting of 6 passionate individuals with diverse back
 | Team Member | Email IDs                    | Github     |
 |-------------|------------------------------|------------|
 | Aakansha    | Aakansha8.jain@gmail.com    | Aakansha08 |
-| Naman       | namankchhabra@gmail.com     | nmnKumar   |
 | Prabhjot    | prabhjtosingh@gmail.com      | prabhjot023|
 | Preet       | preetangad107@gmail.com      | PreetAngadSingh |
 | Rancy       | chadharancy@gmail.com        | RancyKaur  |
@@ -34,7 +33,6 @@ We are Team Brainstorm, consisting of 6 passionate individuals with diverse back
 | Team Member | Strengths              | Role Sprint1        |
 |-------------|------------------------|---------------------|
 | Aakansha    | Project Management     | Scrum Master        |
-| Naman       | UI/FrontEnd Dev        | Support Manager     |
 | Prabhjot    | UI/FrontEnd Dev        | Implementation Manager |
 | Preet       | UX Design              | Design Manager      |
 | Rancy       | Backend/DB             | Product Owner       |
