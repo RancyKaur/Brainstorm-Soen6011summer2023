@@ -42,6 +42,13 @@ We are Team Brainstorm, consisting of 6 passionate individuals with diverse back
 
 The project WIKI records our MoMS - [Project WIKI](https://github.com/nmnKumar/Brainstorm-Soen6011summer2023/wiki)
 
+## Technology Used
+* HTML
+* CSS
+* Angular
+* Typescript
+* UI Library - Primeng
+
 ## User Stories
 ### User Story 1:		
 * Creating and Managing Student/Employer Profile  
