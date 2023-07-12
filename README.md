@@ -50,40 +50,12 @@ The project WIKI records our MoMS - [Project WIKI](https://github.com/nmnKumar/B
 * UI Library - Primeng
 
 ## User Stories
-### User Story 1:		
-* Creating and Managing Student/Employer Profile  
-Task Breakdown and target sprint: 
-* Create database schema and tables for users	- Sprint 2	
-* Create Sign Up page for employer/student	- Sprint 2	
-* Create login page for employer/student	- Sprint 2	
-* Design and code layouts for New User Profile page -	Sprint 2	
-* Code modify and delete user profile	- Sprint 2	
-* Create table for storing student's resume	- Sprint 2	
-* Create screen to upload or build resume	- Sprint 2	
+| User Story  | Tasks                  |
+|-------------|------------------------|
+| As a user (either a student/candidate or an employer),
+I want to be able to create and manage my profile on the career services platform,
+So that I can provide relevant information    | Create Sign Up page for employer/student    |
 
-### User Story 2:
-* Browsing for available postings	 
-  Task Breakdown and target sprint:
-* Create layout for the browse posting page	- Sprint 2	
-* List all available job posting on the page - Sprint 2	
-* Create Search bar	- Sprint 2	
-* Search posting keyword	- Sprint 2	
-
-### User Story 3:
-* Adding and manage postings to the System by the Employers  
-  Task Breakdown and target sprint:
-* Create tables for job postings -	Sprint 2	
-* Design and Create page layout for adding new job posting	- Sprint 2	
-* Modify and Delete job posting page	- Sprint 2	
-* Design and create page for employer to see list of candidates that applied for a job posting -	Sprint 2
-
-### User Story 4:	
-* Candidates can apply to Employers job postings and get informed by the Employer if candidate gets selected  
-  Task Breakdown and target sprint:
-* Create table to map job positng with applied candidates -	Sprint 3	
-* Design notification method that employer can use to send message to candidate for next steps	- Sprint 3	
-* Code notifications	- Sprint 3	
-* Create screen to track applied jobs by candidates	- Sprint 3	
 
 ## Competitive Analysis
 Competitive analysis plays a crucial role in the software engineering process. Before the launch of a product or a service, it is important to scope out solutions that already exist for your problem statement. A competitive analysis helps understand what works and what doesn’t among features offered by other solution providers in one's app domain. It helps you strategically design a superior experience that allows a product to stand out from the rest.
