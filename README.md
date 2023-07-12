@@ -52,9 +52,8 @@ The project WIKI records our MoMS - [Project WIKI](https://github.com/nmnKumar/B
 ## User Stories
 | User Story  | Tasks                  |
 |-------------|------------------------|
-| As a user (either a student/candidate or an employer),
-I want to be able to create and manage my profile on the career services platform,
-So that I can provide relevant information    | Create Sign Up page for employer/student    |
+| As a user (either a student/candidate or an employer)I want to be able to create and manage my profile on the career services platform so that I can provide relevant information| Create Sign Up page for employer/student    |
+||Create login page for employer/student,Define acceptance test for creating and modify user profile,Design and code New User Profile page,Design and code modify user profile,Define acceptance test for build resume ,Code build resume page|
 
 
 ## Competitive Analysis
