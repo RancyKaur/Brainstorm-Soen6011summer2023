@@ -62,6 +62,15 @@ The project WIKI records our MoMS - [Project WIKI](https://github.com/nmnKumar/B
 |As a candiate I want to browse for available postings so that I can apply for relevant job posting| Define acceptance test for browse postings|
 ||Create layout for the browse posting page|
 ||List all available job posting on the page|
+|As a candidate, I want to be able to apply for jobs and track the status of my applications so that I can stay informed about the progress and any updates regarding my job applications| Define acceptance test for apply to job posting|
+||Create apply job posting feature for candidate|
+||Define acceptance test for trackng applications|
+||Create screen for candiates to track their application|
+|As an administrator I want to track user profiles and postings to manage the system| Define acceptance test for listing all candidates and employers registered in the system|
+||Create page to list all candidates|
+||Create page to list all employees|
+||Define acceptance test for listing all job positngs in the system|
+||Create page to see all the jobs postings in the system|
 
 
 ## Competitive Analysis
