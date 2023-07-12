@@ -84,3 +84,10 @@ Task Breakdown and target sprint:
 * Design notification method that employer can use to send message to candidate for next steps	- Sprint 3	
 * Code notifications	- Sprint 3	
 * Create screen to track applied jobs by candidates	- Sprint 3	
+
+## Competitive Analysis
+Competitive analysis plays a crucial role in the software engineering process. Before the launch of a product or a service, it is important to scope out solutions that already exist for your problem statement. A competitive analysis helps understand what works and what doesn’t among features offered by other solution providers in one's app domain. It helps you strategically design a superior experience that allows a product to stand out from the rest.
+* Indeed
+* LinkedIn
+* Glassdoor
+* ZipRecruiter
