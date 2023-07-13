@@ -11,10 +11,12 @@ import { DividerModule } from 'primeng/divider';
 
 import { CardModule } from 'primeng/card';
 import { ToastModule } from 'primeng/toast';
+import { SignUpComponent } from './sign-up/sign-up.component';
 @NgModule({
   declarations: [
     LoginComponent,
     LandingPageComponent,
+    SignUpComponent,
 
   ],
   imports: [

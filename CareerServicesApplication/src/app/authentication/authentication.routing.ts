@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 
@@ -19,6 +20,11 @@ export const routes: Routes = [
     component: LoginComponent,
     children: []
   },
+  {
+    path:'signup',
+    component: SignUpComponent,
+    children:[]
+  }
 
 ];
 

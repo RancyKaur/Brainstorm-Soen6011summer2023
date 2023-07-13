@@ -13,14 +13,12 @@
         <form [formGroup]="loginForm" autocomplete="false" name="loginForm">
 
 
-          <div class="set_input">
-          <span class="p-input-icon-left ">
-            <i class="pi pi-user"></i>
-            <input type="text" pInputText name="email" />
-          </span>
+          <div >
+            <input class="set_input" pInputText type="text"  name="email" />
+
         </div>
-        <div class="set_input">
-          <p-password name="password">
+        <div >
+          <p-password name="password" class="set_input">
 
             <ng-template pTemplate="footer">
               <p-divider></p-divider>
