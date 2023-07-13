@@ -59,6 +59,13 @@ The project WIKI records our MoMS - [Project WIKI](https://github.com/nmnKumar/B
 ||Design and code modify user profile|
 ||Define acceptance test for build resume
 ||Code build resume page|
+| As an employer I want to Browse Candidates so that I can review their profiles and qualifications for potential job openings|
+||Design page for browse candidates|
+||Define acceptance test for Browse candidates feature|
+||Code browse candidates page|
+||Design select candidate feature|
+||Define acceptance test for select candidate feature|
+||Code select candidate feature|
 |As a candiate I want to browse for available postings so that I can apply for relevant job posting| Define acceptance test for browse postings|
 ||Create layout for the browse posting page|
 ||List all available job posting on the page|
