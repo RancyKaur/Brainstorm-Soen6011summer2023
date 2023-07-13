@@ -23,7 +23,6 @@ We are Team Brainstorm, consisting of 6 passionate individuals with diverse back
 | Team Member | Email IDs                    | Github     |
 |-------------|------------------------------|------------|
 | Aakansha    | Aakansha8.jain@gmail.com    | Aakansha08 |
-| Naman       | namankchhabra@gmail.com     | nmnKumar   |
 | Prabhjot    | prabhjtosingh@gmail.com      | prabhjot023|
 | Preet       | preetangad107@gmail.com      | PreetAngadSingh |
 | Rancy       | chadharancy@gmail.com        | RancyKaur  |
@@ -34,7 +33,6 @@ We are Team Brainstorm, consisting of 6 passionate individuals with diverse back
 | Team Member | Strengths              | Role Sprint1        |
 |-------------|------------------------|---------------------|
 | Aakansha    | Project Management     | Scrum Master        |
-| Naman       | UI/FrontEnd Dev        | Support Manager     |
 | Prabhjot    | UI/FrontEnd Dev        | Implementation Manager |
 | Preet       | UX Design              | Design Manager      |
 | Rancy       | Backend/DB             | Product Owner       |
@@ -44,38 +42,47 @@ We are Team Brainstorm, consisting of 6 passionate individuals with diverse back
 
 The project WIKI records our MoMS - [Project WIKI](https://github.com/nmnKumar/Brainstorm-Soen6011summer2023/wiki)
 
+## Technology Used
+* HTML
+* CSS
+* Angular
+* Typescript
+* UI Library - Primeng
+
 ## User Stories
-### User Story 1:		
-* Creating and Managing Student/Employer Profile  
-Task Breakdown and target sprint: 
-* Create database schema and tables for users	- Sprint 2	
-* Create Sign Up page for employer/student	- Sprint 2	
-* Create login page for employer/student	- Sprint 2	
-* Design and code layouts for New User Profile page -	Sprint 2	
-* Code modify and delete user profile	- Sprint 2	
-* Create table for storing student's resume	- Sprint 2	
-* Create screen to upload or build resume	- Sprint 2	
+| User Story  | Tasks                  |
+|-------------|------------------------|
+| As a user (either a student/candidate or an employer)I want to be able to create and manage my profile on the career services platform so that I can provide relevant information| Create Sign Up page for employer/student    |
+||Create login page for employer/student|
+||Define acceptance test for creating and modify user profile|
+||Design and code New User Profile page|
+||Design and code modify user profile|
+||Define acceptance test for build resume
+||Code build resume page|
+| As an employer I want to Browse Candidates so that I can review their profiles and qualifications for potential job openings|
+||Design page for browse candidates|
+||Define acceptance test for Browse candidates feature|
+||Code browse candidates page|
+||Design select candidate feature|
+||Define acceptance test for select candidate feature|
+||Code select candidate feature|
+|As a candiate I want to browse for available postings so that I can apply for relevant job posting| Define acceptance test for browse postings|
+||Create layout for the browse posting page|
+||List all available job posting on the page|
+|As a candidate, I want to be able to apply for jobs and track the status of my applications so that I can stay informed about the progress and any updates regarding my job applications| Define acceptance test for apply to job posting|
+||Create apply job posting feature for candidate|
+||Define acceptance test for trackng applications|
+||Create screen for candiates to track their application|
+|As an administrator I want to track user profiles and postings to manage the system| Define acceptance test for listing all candidates and employers registered in the system|
+||Create page to list all candidates|
+||Create page to list all employees|
+||Define acceptance test for listing all job positngs in the system|
+||Create page to see all the jobs postings in the system|
 
-### User Story 2:
-* Browsing for available postings	 
-  Task Breakdown and target sprint:
-* Create layout for the browse posting page	- Sprint 2	
-* List all available job posting on the page - Sprint 2	
-* Create Search bar	- Sprint 2	
-* Search posting keyword	- Sprint 2	
 
-### User Story 3:
-* Adding and manage postings to the System by the Employers  
-  Task Breakdown and target sprint:
-* Create tables for job postings -	Sprint 2	
-* Design and Create page layout for adding new job posting	- Sprint 2	
-* Modify and Delete job posting page	- Sprint 2	
-* Design and create page for employer to see list of candidates that applied for a job posting -	Sprint 2
-
-### User Story 4:	
-* Candidates can apply to Employers job postings and get informed by the Employer if candidate gets selected  
-  Task Breakdown and target sprint:
-* Create table to map job positng with applied candidates -	Sprint 3	
-* Design notification method that employer can use to send message to candidate for next steps	- Sprint 3	
-* Code notifications	- Sprint 3	
-* Create screen to track applied jobs by candidates	- Sprint 3	
+## Competitive Analysis
+Competitive analysis plays a crucial role in the software engineering process. Before the launch of a product or a service, it is important to scope out solutions that already exist for your problem statement. A competitive analysis helps understand what works and what doesn’t among features offered by other solution providers in one's app domain. It helps you strategically design a superior experience that allows a product to stand out from the rest.
+* Indeed
+* LinkedIn
+* Glassdoor
+* ZipRecruiter
