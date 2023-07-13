@@ -78,7 +78,11 @@ The project WIKI records our MoMS - [Project WIKI](https://github.com/nmnKumar/B
 ||Create page to list all employees|
 ||Define acceptance test for listing all job positngs in the system|
 ||Create page to see all the jobs postings in the system|
-
+|As an employer, I want to be able to add and manage job postings so that I can attract potential candidates for specific job openings in my organization.|Define acceptance test for adding and managing job postings|
+||Design and code add new job postings|
+||Design and code Modify and Delete job posting page|
+||Define acceptance test for list of candidates page|
+||Design and create page for employer to see list of candidates that applied for a job posting|
 
 ## Competitive Analysis
 Competitive analysis plays a crucial role in the software engineering process. Before the launch of a product or a service, it is important to scope out solutions that already exist for your problem statement. A competitive analysis helps understand what works and what doesn’t among features offered by other solution providers in one's app domain. It helps you strategically design a superior experience that allows a product to stand out from the rest.
