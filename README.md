@@ -52,13 +52,18 @@ The project WIKI records our MoMS - [Project WIKI](https://github.com/nmnKumar/B
 ## User Stories
 | User Story  | Tasks                  |
 |-------------|------------------------|
-| As a user (either a student/candidate or an employer)I want to be able to create and manage my profile on the career services platform so that I can provide relevant information| Create Sign Up page for employer/student    |
+| As a student/candidate, I want to be able to create a profile, build/upload a resume, browse job offers, and apply for positions on the career services platform, So that I can effectively showcase my qualifications, explore job opportunities, and submit applications for relevant positions   |
 ||Create login page for employer/student|
 ||Define acceptance test for creating and modify user profile|
 ||Design and code New User Profile page|
 ||Design and code modify user profile|
 ||Define acceptance test for build resume
 ||Code build resume page|
+||Define acceptance test for browse postings|
+||Create layout for the browse posting page|
+||List all available job posting on the page|
+||Define acceptance test for apply to job posting|
+||Create apply job posting feature for candidate|
 | As an employer I want to Browse Candidates so that I can review their profiles and qualifications for potential job openings|
 ||Design page for browse candidates|
 ||Define acceptance test for Browse candidates feature|
