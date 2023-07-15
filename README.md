@@ -63,30 +63,17 @@ The project WIKI records our MoMS - [Project WIKI](https://github.com/nmnKumar/B
 ||List all available job posting on the page|
 ||Define acceptance test for apply to job posting|
 ||Create apply job posting feature for candidate|
-| As an employer I want to Browse Candidates so that I can review their profiles and qualifications for potential job openings|
-||Design page for browse candidates|
+|As an employer, I want to be able to browse candidates, add job offers, and select candidates who have applied for an interview on the career services platform, So that I can efficiently identify and connect with potential candidates for job openings in my organization.| Design page for browse candidates|
 ||Define acceptance test for Browse candidates feature|
 ||Code browse candidates page|
-||Design select candidate feature|
-||Define acceptance test for select candidate feature|
+||Design select candidate feature| Define acceptance test for select candidate feature|
 ||Code select candidate feature|
-|As a candiate I want to browse for available postings so that I can apply for relevant job posting| Define acceptance test for browse postings|
-||Create layout for the browse posting page|
-||List all available job posting on the page|
-|As a candidate, I want to be able to apply for jobs and track the status of my applications so that I can stay informed about the progress and any updates regarding my job applications| Define acceptance test for apply to job posting|
-||Create apply job posting feature for candidate|
-||Define acceptance test for trackng applications|
-||Create screen for candiates to track their application|
-|As an administrator I want to track user profiles and postings to manage the system| Define acceptance test for listing all candidates and employers registered in the system|
-||Create page to list all candidates|
-||Create page to list all employees|
-||Define acceptance test for listing all job positngs in the system|
-||Create page to see all the jobs postings in the system|
-|As an employer, I want to be able to add and manage job postings so that I can attract potential candidates for specific job openings in my organization.|Define acceptance test for adding and managing job postings|
+||Define acceptance test for adding and managing job postings|
 ||Design and code add new job postings|
 ||Design and code Modify and Delete job posting page|
 ||Define acceptance test for list of candidates page|
 ||Design and create page for employer to see list of candidates that applied for a job posting|
+
 
 ## Competitive Analysis
 Competitive analysis plays a crucial role in the software engineering process. Before the launch of a product or a service, it is important to scope out solutions that already exist for your problem statement. A competitive analysis helps understand what works and what doesn’t among features offered by other solution providers in one's app domain. It helps you strategically design a superior experience that allows a product to stand out from the rest.
