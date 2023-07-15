@@ -63,7 +63,7 @@ The project WIKI records our MoMS - [Project WIKI](https://github.com/nmnKumar/B
 ||List all available job posting on the page|
 ||Define acceptance test for apply to job posting|
 ||Create apply job posting feature for candidate|
-|As an employer, I want to be able to browse candidates, add job offers, and select candidates who have applied for an interview on the career services platform, So that I can efficiently identify and connect with potential candidates for job openins in my organizaton.| Design page for browse candidates|
+|As an employer, I want to be able to browse candidates, add job offers, and select candidates who have applied for an interview on the career services platform, So that I can efficiently identify and connect with potential candidates for job openings in my organization.| Design page for browse candidates|
 ||Define acceptance test for Browse candidates feature|
 ||Code browse candidates page|
 ||Design select candidate feature| Define acceptance test for select candidate feature|
