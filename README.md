@@ -42,6 +42,10 @@ We are Team Brainstorm, consisting of 6 passionate individuals with diverse back
 
 The project WIKI records our MoMS - [Project WIKI](https://github.com/nmnKumar/Brainstorm-Soen6011summer2023/wiki)
 
+## Project Management Tool
+We would be using github end to end. For Project Management, we created Github project where would be tracking our sprints
+The link to the project is: https://github.com/users/RancyKaur/projects/3/views/1
+
 ## Technology Used
 * HTML5
 * SCSS
