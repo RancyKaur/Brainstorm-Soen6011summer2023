@@ -77,6 +77,15 @@ The link to the project is: https://github.com/users/RancyKaur/projects/3/views/
 ||Design and code Modify and Delete job posting page|
 ||Define acceptance test for list of candidates page|
 ||Design and create page for employer to see list of candidates that applied for a job posting|
+|As an employer and candidate, I want to be able to track the status of job postings and applications on the career services platform, So that I can stay informed about the progress and actions related to the recruitment process.|Define acceptance test for tracking applied jobs|
+||Create screen to track applied jobs by candidates for employer|
+||Define acceptance test for trackng applications|
+||Create screen for candiates to track their application|
+|As an administrator, I want to be able to track user profiles and postings on the career services platform So that I can effectively manage the system and ensure smooth operation.|Define acceptance test for listing all candidates and employers registered in the system|
+||Create page to list all candidates|
+||Create page to list all employees|
+||Define acceptance test for listing all job positngs in the system|
+||Create page to see all the jobs postings in the system|
 
 
 ## Competitive Analysis
