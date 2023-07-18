@@ -1,8 +1,4 @@
-*{
-  margin:0px;
-  padding: 0px;
-}
-
+@import "primeicons/primeicons.css";
 .set_alignment{
   display: flex;
   justify-content: center;
@@ -16,7 +12,17 @@
 .container::-webkit-scrollbar {
   display: none;
 }
-
+::ng-deep .invalid-feedback{
+  display: block !important;
+  font-size: 13px;
+  color: red;
+}
+.textfield{
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
 
 
 .set_button_align{
@@ -25,4 +31,18 @@
   margin: unset !important;
   margin-bottom: 5px !important;
   }
+}
+
+.button-align{
+  display: flex;
+  align-items: center;
+}
+
+.secondary-btn{
+  margin-left:20px;
+  color: #3B82F6;
+  text-decoration: none;
+}
+::ng-deep ul{
+  margin-bottom: 0 !important;
 }

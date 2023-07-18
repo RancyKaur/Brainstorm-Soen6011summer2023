@@ -13,8 +13,8 @@
     <p style="margin-top: 5px;">Create an account for tools to help you
     </p>
     <ng-template pTemplate="footer">
-        <p-button label="Job Seeker" icon="pi pi-check" class="set_button_align" (click)="redirectTo()"></p-button>
-        <p-button label="Employer" icon="pi pi-times" class="set_button_align" styleClass="p-button-outlined" [style]="{ 'margin-left': '.5em' }"></p-button>
+        <p-button label="Job Seeker"  class="set_button_align" (click)="redirectTo('student')"></p-button>
+        <p-button label="Employer"  class="set_button_align" (click)="redirectTo('employer')" styleClass="p-button-outlined" [style]="{ 'margin-left': '.5em' }"></p-button>
     </ng-template>
 </p-card>
 

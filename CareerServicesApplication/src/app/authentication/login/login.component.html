@@ -1,24 +1,31 @@
 <div class="container-fluid set_alignment">
-
-
   <p-card header="Login" [style]="{ width: '360px' }">
     <ng-template pTemplate="header">
-      <img alt="Card"
-        src="https://img.freepik.com/free-vector/privacy-policy-concept-illustration_114360-7853.jpg?w=740&t=st=1689032177~exp=1689032777~hmac=3f9599f86a473d5b9a3c08340d5c2caa5fc655f090099366ef5ae7e089d30fc8" />
+      <img
+        alt="Card"
+        src="https://img.freepik.com/free-vector/privacy-policy-concept-illustration_114360-7853.jpg?w=740&t=st=1689032177~exp=1689032777~hmac=3f9599f86a473d5b9a3c08340d5c2caa5fc655f090099366ef5ae7e089d30fc8"
+      />
     </ng-template>
 
     <div>
-
-      <div class="col-xs-12 ">
+      <div class="col-xs-12">
         <form [formGroup]="loginForm" autocomplete="false" name="loginForm">
-
-
-          <div >
-            <input class="set_input" pInputText type="text"  name="email" />
-
-        </div>
-        <div >
-          <p-password name="password" class="set_input">
+          <div class="textfield">
+            <input
+              class="set_input"
+              pInputText
+              type="text"
+              formControlName="email"
+            />
+            <div
+              *ngIf="submitted && loginForm.controls['email'].invalid"
+              class="invalid-feedback"
+            >
+              <div>Please enter valid email</div>
+            </div>
+          </div>
+          <!-- <div >
+          <p-password formControlName="password" class="set_input">
 
             <ng-template pTemplate="footer">
               <p-divider></p-divider>
@@ -31,22 +38,39 @@
               </ul>
             </ng-template>
           </p-password>
-        </div>
-          <div class="card flex justify-content-center" style="margin-top: 7px;">
-            <p-toast></p-toast>
-            <button type="button" pButton pRipple (click)="verify()" label="Submit"></button>
+        </div> -->
+
+          <div class="textfield">
+            <p-password
+              formControlName="password"
+              [feedback]="false"
+              class="set_input"
+              [toggleMask]="true"
+            ></p-password>
+            <div
+              *ngIf="submitted && loginForm.controls['password'].invalid"
+              class="invalid-feedback"
+            >
+              <div>Password is required</div>
+            </div>
           </div>
-
-
-
-
+          <div class="card flex justify-content-center" style="margin-top: 7px">
+            <p-toast></p-toast>
+            <div class="button-align">
+              <button
+                type="button"
+                pButton
+                pRipple
+                (click)="onSubmit()"
+                label="Submit"
+              ></button>
+              <a [routerLink]="['/register']" class="secondary-btn" style=""
+                >Register</a
+              >
+            </div>
+          </div>
         </form>
       </div>
-
-
-
-
     </div>
   </p-card>
-
 </div>
