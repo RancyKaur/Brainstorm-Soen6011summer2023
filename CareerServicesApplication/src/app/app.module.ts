@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FakeBackendInterceptor, fakeBackendProvider } from './_helpers/fake_backend';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MessagesModule } from 'primeng/messages';
@@ -26,6 +26,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
   ],
   providers: [
+
+    fakeBackendProvider
 
   ],
   bootstrap: [AppComponent]
