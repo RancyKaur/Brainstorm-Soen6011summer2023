@@ -14,8 +14,9 @@ export class LandingPageComponent {
 
   }
 
-  redirectTo()
+  redirectTo(val:any)
   {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/signup',val]);
+
   }
 }

@@ -1,0 +1,135 @@
+@import '../css/variables.scss';
+.fancy-form .form-group label:not(.ui-dropdown-label):not([class*=col-]), .fancy-modal .form-group label:not([class*=col-]),
+.panel-box label {
+  text-transform: uppercase;
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  // letter-spacing: .6px;
+  //color: #9b9b9b;
+  margin-bottom: 6px;
+  padding: 0 10px 0 0;
+}
+.fancy-form .form-control, .fancy-form .form-group input, .fancy-form .form-group select, .fancy-form .form-group textarea, .fancy-modal .form-control.ui-select-container, .fancy-modal .form-group input, .fancy-modal .form-group select,  .fancy-modal .form-group textarea {
+  background: 0 0;
+  border: none;
+  outline: 0;
+  border: 1px solid #ddd;
+  width: 100%;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 9px;
+  line-height: normal;
+  color: #474747;
+  font-family: $proxima-reg;
+  letter-spacing: .9px;
+  position: relative;
+  background-color: white;
+}
+
+.fancy-form .form-control:disabled, .fancy-form .form-group input:disabled,  .fancy-form .form-group select:disabled, .fancy-form .form-group textarea:disabled, .fancy-modal .form-control.ui-select-container:disabled, .fancy-modal .form-group input:disabled, .fancy-form .form-group select:disabled, .fancy-modal .form-group textarea:disabled {
+  cursor: not-allowed;
+  background: $color-gray;
+  opacity: 0.5;
+}
+
+// .fancy-form label.heading{
+//   font-size: 16px
+// }
+// .fancy-form label.description{
+//   font-size: 12px
+// }
+// .fancy-form .value{
+//   font-size: 12px;
+// }
+.fancy-form .form-group input:-moz-placeholder {
+  /* Chrome/Opera/Safari */
+  opacity: 0.5;
+  font-family: $proxima-reg;
+  font-size: 15px;
+  text-align: left;
+  color: $color-gray-dark;
+}
+.fancy-form .form-group textarea:-webkit-input-placeholder{
+  opacity: 0.5;
+  font-family: $proxima-reg;
+  font-size: 15px;
+  text-align: left;
+  color: $color-gray-dark;
+}
+
+.fancy-form .form-group input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  opacity: 0.5;
+  font-family: $proxima-reg;
+  font-size: 15px;
+  text-align: left;
+  color: $color-gray-dark;
+}
+.fancy-form .form-group textarea::-webkit-input-placeholder{
+  opacity: 0.5;
+  font-family: $proxima-reg;
+  font-size: 15px;
+  text-align: left;
+  color: $color-gray-dark;
+}
+
+.fancy-form .form-group input::-moz-placeholder{
+  /* Chrome/Opera/Safari */
+  opacity: 0.5;
+  font-family: $proxima-reg;
+  font-size: 15px;
+  text-align: left;
+  color: $color-gray-dark;
+}
+.fancy-form .form-group textarea::-moz-placeholder{
+  opacity: 0.5;
+  font-family: $proxima-reg;
+  font-size: 15px;
+  text-align: left;
+  color: $color-gray-dark;
+}
+.fancy-form .form-group input:-ms-input-placeholder{
+  /* Chrome/Opera/Safari */
+  opacity: 0.5;
+  font-family: $proxima-reg;
+  font-size: 15px;
+  text-align: left;
+  color: $color-gray-dark ;
+}
+.fancy-form .form-group textarea:-ms-input-placeholder{
+  opacity: 0.5;
+  font-family: $proxima-reg;
+  font-size: 15px;
+  text-align: left;
+  color: $color-gray-dark;
+}
+
+// @media screen and(min-width: 768px){
+//   .fancy-form label.heading{
+//     font-size: 12px
+//   }
+//   .fancy-form label.description{
+//     font-size: 10px
+//   }
+//   .fancy-form .value{
+//     font-size: 14px;
+//   }
+//   .fancy-form .form-group input{
+//     font-size: 14px;
+//   }
+// }
+
+
+// icons
+.material-icon-delete,.material-icon-edit,.material-icon-save{
+  color: $color-box-heading;
+  cursor: pointer;
+  font-size: 20px;
+  &:hover{
+    color: $color-blue;
+  }
+}

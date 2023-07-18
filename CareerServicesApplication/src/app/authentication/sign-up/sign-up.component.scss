@@ -1,0 +1,28 @@
+@import '../landing-page/landing-page.component.scss';
+@import "primeicons/primeicons.css";
+
+
+::ng-deep .p-card-header{
+  display: flex;
+  justify-content: center;
+}
+img{
+  width: 250px !important;
+}
+
+.set_input{
+  display: flex;
+  border-radius: 0.5rem;
+  height: 47px;
+//   margin-bottom: 10px;
+  width: 100%;
+
+  ::ng-deep .p-password{
+    width: 100%;
+  }
+  ::ng-deep input{
+    width: 100%;
+  }
+}
+
+
