@@ -7,4 +7,6 @@ export class User {
   token?: string;
   userType?:any;
   companyName?:any;
+  companyAddress?:any;
+  companyPhone?:any;
 }

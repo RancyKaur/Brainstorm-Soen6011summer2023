@@ -32,6 +32,8 @@ export class SignUpComponent {
       firstName: [''],
       lastName: [''],
       companyName:[''],
+      companyAddress:[''],
+      companyPhone:[''],
       username: ['', [Validators.email,Validators.required]],
       password: ['', [Validators.required]],
       userType:[this.route.snapshot.params['id']
@@ -45,6 +47,8 @@ export class SignUpComponent {
     }
     else{
       this.form.controls['companyName'].setValidators(Validators.required);
+      this.form.controls['companyAddress'].setValidators(Validators.required);
+      this.form.controls['companyPhone'].setValidators(Validators.required);
 
     }
   }
