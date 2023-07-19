@@ -9,7 +9,8 @@ let users: any[] = JSON.parse(localStorage.getItem(usersKey)!) || [];
 const resumeKey = 'Resumes';
 
 let resumes: any[] = JSON.parse(localStorage.getItem(resumeKey)!) || [];
-
+const postKey = 'Posts';
+let posts: any[] = JSON.parse(localStorage.getItem(postKey)!) || [];
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
@@ -28,6 +29,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
           return updateUser();
         case url.endsWith('/users/addResume') && method === 'POST':
             return addResume();
+        case url.endsWith('/users/addPost') && method === 'POST':
+            return addPost();
         default:
           // pass through any requests not handled above
           return next.handle(request);
@@ -133,6 +136,17 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         return ok();
       }
    
+      function addPost() {
+
+
+        let params = body;
+
+          posts.push(params);
+          localStorage.setItem(postKey, JSON.stringify(posts));
+
+        return ok();
+
+    }
   }
 }
 
