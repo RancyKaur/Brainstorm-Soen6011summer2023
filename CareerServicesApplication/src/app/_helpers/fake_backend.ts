@@ -21,6 +21,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
           return authenticate();
         case url.endsWith('/users/register') && method === 'POST':
           return register();
+        case url.match(/\/users\/\d+$/) && method === 'PUT':
+          return updateUser();
         default:
           // pass through any requests not handled above
           return next.handle(request);
@@ -54,10 +56,29 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
   
     
+    function updateUser() {
+      if (!isLoggedIn()) return unauthorized();
 
+      let params = body;
+      let user = users.find(x => x.id === idFromUrl());
+
+      // only update password if entered
+      if (!params.password) {
+        delete params.password;
+      }
+
+      // update and save user
+      Object.assign(user, params);
+      localStorage.setItem(usersKey, JSON.stringify(users));
+
+      return ok();
+    }
 
    
-
+    function idFromUrl() {
+      const urlParts = url.split('/');
+      return parseInt(urlParts[urlParts.length - 1]);
+    }
 
     // helper functions
 
