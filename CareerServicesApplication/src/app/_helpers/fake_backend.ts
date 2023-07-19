@@ -6,6 +6,9 @@ import { delay, materialize, dematerialize } from 'rxjs/operators';
 // array in local storage for registered users
 const usersKey = 'Users';
 let users: any[] = JSON.parse(localStorage.getItem(usersKey)!) || [];
+const resumeKey = 'Resumes';
+
+let resumes: any[] = JSON.parse(localStorage.getItem(resumeKey)!) || [];
 
 
 @Injectable()
@@ -111,6 +114,22 @@ export class FakeBackendInterceptor implements HttpInterceptor {
       }
     }
 
+    function addResume() {
+
+
+        let params = body;
+        if(resumes.find(x => x.id === body.id))
+        {
+        let resume = resumes.find(x => x.id === body.id);
+        Object.assign(resume, params);
+        localStorage.setItem(resumeKey, JSON.stringify(resumes));
+        }
+        else{
+          resumes.push(params);
+        localStorage.setItem(resumeKey, JSON.stringify(resumes));
+        }
+        return ok();
+      }
    
   }
 }
