@@ -26,6 +26,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
           return register();
         case url.match(/\/users\/\d+$/) && method === 'PUT':
           return updateUser();
+        case url.endsWith('/users/addResume') && method === 'POST':
+            return addResume();
         default:
           // pass through any requests not handled above
           return next.handle(request);
