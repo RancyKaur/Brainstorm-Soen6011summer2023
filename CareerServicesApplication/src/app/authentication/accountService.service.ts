@@ -60,4 +60,7 @@ export class AccountService {
                 return x;
             }));
     }
+    addResume(user: User) {
+      return this.http.post(`${this.environment.apiUrl}/users/addResume`, user);
+  }
 }
