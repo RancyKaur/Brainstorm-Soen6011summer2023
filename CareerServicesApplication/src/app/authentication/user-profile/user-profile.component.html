@@ -1,4 +1,3 @@
-<p>user-profile works!</p>
 <div class="container-fluid set_alignment">
     <p-card header="User Profile" [style]="{ width: '360px' }">
       <div>
@@ -62,7 +61,7 @@
             </div>
             <div class="textfield">
               <label htmlFor="first name">Password<span style="color: red;">*</span></label>
-  
+
               <p-password formControlName="password" class="set_input" [toggleMask]="true">
                 <ng-template pTemplate="footer">
                   <p-divider></p-divider>
@@ -80,15 +79,15 @@
             </div>
             </div>
             <div class="card flex justify-content-center" style="margin-top: 7px">
-  
+
               <button
-  
+
                 pButton
                 pRipple
                 (click)="onSubmit()"
                 label="Submit"
               ></button>
-  
+
               <!-- <a [routerLink]="['/register']"></a> -->
             </div>
             <p-toast></p-toast>
@@ -97,4 +96,3 @@
       </div>
     </p-card>
   </div>
-  
