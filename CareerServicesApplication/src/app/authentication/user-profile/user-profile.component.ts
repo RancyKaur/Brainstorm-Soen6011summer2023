@@ -31,6 +31,8 @@ export class UserProfileComponent {
       firstName: [this.loggedInUser.firstName ? this.loggedInUser.firstName :'' ],
       lastName: [this.loggedInUser.lastName ? this.loggedInUser.lastName : ''],
       companyName : [this.loggedInUser.companyName ? this.loggedInUser.companyName : ''],
+      companyAddress:[this.loggedInUser.companyAddress ? this.loggedInUser.companyAddress : ''],	
+      companyPhone:[this.loggedInUser.companyPhone ? this.loggedInUser.companyPhone : ''],
       username: [this.loggedInUser.username, [Validators.email,Validators.required]],
       password: [this.loggedInUser.password, [Validators.required]],
       userType:[this.loggedInUser.userType
@@ -44,7 +46,8 @@ export class UserProfileComponent {
     }
     else{
       this.form.controls['companyName'].setValidators(Validators.required);
-
+      this.form.controls['companyAddress'].setValidators(Validators.required);	
+      this.form.controls['companyPhone'].setValidators(Validators.required);
     }
 
   }

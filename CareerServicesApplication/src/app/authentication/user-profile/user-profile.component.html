@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class="container-fluid set_alignment">
     <p-card header="User Profile" [style]="{ width: '360px' }">
       <div>
@@ -43,6 +44,35 @@
               />
               <div *ngIf="submitted && form.controls['lastName'].invalid" class="invalid-feedback">
                   <div >Company Name is required</div>
+              </div>
+            </div>
+            <div class="textfield" *ngIf="loggedInUser.userType == 'employer'">
+              <label htmlFor="first name">Company Address<span style="color: red;">*</span></label>
+              <input
+                type="text"
+                pInputText
+                id="comapnyname"
+                formControlName="companyAddress"
+                aria-describedby="firtname-help"
+                class="set_input"
+              />
+              <div *ngIf="submitted && form.controls['companyAddress'].invalid" class="invalid-feedback">
+                  <div >Company Address is required</div>
+              </div>
+            </div>
+  
+            <div class="textfield" *ngIf="loggedInUser.userType == 'employer'">
+              <label htmlFor="first name">Company Phone Number<span style="color: red;">*</span></label>
+              <input
+                type="text"
+                pInputText
+                id="companyPhone"
+                formControlName="companyPhone"
+                aria-describedby="firtname-help"
+                class="set_input"
+              />
+              <div *ngIf="submitted && form.controls['companyPhone'].invalid" class="invalid-feedback">
+                  <div >Company Phone Number is required</div>
               </div>
             </div>
             <div class="textfield">
