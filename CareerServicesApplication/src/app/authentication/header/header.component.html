@@ -1,1 +1,21 @@
-<p>header works!</p>
+<nav class="header">
+    <img src="../../../assets/logo.jpg" alt="logo" height="75px">
+    <ul>
+
+        <li>
+            <a [routerLink]="['/homepage']">Home</a>
+        </li>
+        <li>
+            <a [routerLink]="['/userProfile']">Profile</a>
+        </li>
+        <li  *ngIf="loggedInUser.userType == 'student'">
+            <a [routerLink]="['/resume']">Resume</a>
+        </li>
+        <li>
+            <a [routerLink]="['/applications']">Applications</a>
+        </li>
+        <li>
+            <a [routerLink]="['/']">Logout</a>
+        </li>
+    </ul>
+</nav>

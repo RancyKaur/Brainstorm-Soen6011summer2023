@@ -1,1 +1,71 @@
-<p>home-page works!</p>
+<app-header></app-header>
+<div class="content">
+  <div class="cards" *ngIf="loggedInUser.userType == 'student'">
+    <p-card *ngFor="let i of allposts"
+      header="{{i.job_title}}"
+      subheader="{{i.companyName}}"
+      [style]="{ width: '360px', height: '100%' }"
+    >
+      <ng-template pTemplate="header">
+        <img
+          alt="Card"
+          src="https://primefaces.org/cdn/primeng/images/usercard.png"
+        />
+      </ng-template>
+      <p>
+       {{i.job_desc}}
+      </p>
+      <ng-template pTemplate="footer">
+        <p-button label="Apply" icon="pi pi-check" [style]="{ padding: '12px 25px 12px 20px', margin: '0 20px 0 0' }"></p-button>
+        <p-button label="Edit" icon="pi pi-file-edit" [style]="{ padding: '12px 25px 12px 20px', margin: '0 20px 0 0' }"></p-button>
+        <p-button label="Delete" styleClass="p-button-danger" icon="pi pi-trash" [style]="{ padding: '12px 25px 12px 20px', margin: '0 20px 0 0' }"></p-button>
+      </ng-template>
+    </p-card>
+
+  </div>
+  <div class="cards" *ngIf="loggedInUser.userType == 'employer'">
+    <p-card *ngFor="let i of selectedposts"
+      header="{{i.job_title}}"
+      subheader="{{i.companyName}}"
+      [style]="{ width: '360px', height: '100%' }"
+    >
+      <ng-template pTemplate="header">
+        <img
+          alt="Card"
+          src="https://primefaces.org/cdn/primeng/images/usercard.png"
+        />
+      </ng-template>
+      <p>
+       {{i.job_desc}}
+      </p>
+      <ng-template pTemplate="footer">
+        <p-button label="Apply" icon="pi pi-check" [style]="{ padding: '12px 25px 12px 20px' }"></p-button>
+      </ng-template>
+    </p-card>
+
+  </div>
+  <div class="cards profile-card" *ngIf="loggedInUser.userType == 'employer'">
+    <p-card *ngFor="let i of allStudents"
+      header="Preet Nanda"
+      subheader="Software Developer / UI/UX Designer"
+      [style]="{ width: '360px', height: '100%' }"
+    >
+      <ng-template pTemplate="header">
+        <img
+          alt="Card"
+          src="../../../assets/portrait1.jpg"
+        />
+      </ng-template>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed
+        consequuntur error repudiandae numquam deserunt quisquam repellat libero
+        asperiores earum nam nobis, culpa ratione quam perferendis esse,
+        cupiditate neque quas! asd asdas sads asdasd asda asdasd asdasd
+      </p>
+      <ng-template pTemplate="footer">
+        <p-button label="Message" [style]="{ padding: '12px 25px 12px 20px' }"></p-button>
+      </ng-template>
+    </p-card>
+  </div>
+  <p-button [routerLink]="['/addpost']" label="Post a Job" class="floating-btn" *ngIf="loggedInUser.userType == 'employer'"></p-button>
+</div>

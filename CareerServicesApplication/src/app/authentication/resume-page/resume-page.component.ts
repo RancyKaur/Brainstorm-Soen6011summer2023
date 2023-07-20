@@ -18,6 +18,8 @@ export interface SelectedFiles {
   providers: [MessageService]
 })
 export class ResumePageComponent implements OnInit {
+  expArrForm:FormGroup[]=[];
+  eduArrForm:FormGroup[]=[];
   resumeBuilderForm: FormGroup;
   loggedInUser: any;
   loggedInUserResume: any;
@@ -42,18 +44,39 @@ export class ResumePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.resumeBuilderForm = this.formBuilder.group({
-      firstName: [this.loggedInUser.firstName || '', Validators.required],
-      lastName: [this.loggedInUser.lastName || '', Validators.required],
-      email: [this.loggedInUser.username || '', [Validators.email, Validators.required]],
-      phone: [this.loggedInUserResume ? this.loggedInUser.phone : ''],
-      experienceBlocks: this.formBuilder.array([this.buildExperienceBlock()]),
-      education: this.formBuilder.array([this.educations()]),
+      firstName: [this.loggedInUserResume?.firstName || '', Validators.required],
+      lastName: [this.loggedInUserResume?.lastName || '', Validators.required],
+      email: [this.loggedInUserResume?.email || '', [Validators.email, Validators.required]],
+      phone: [this.loggedInUserResume?.phone || '' ? this.loggedInUserResume.phone : ''],
+      experienceBlocks: this.formBuilder.array(this.buildExperienceBlock()),
+      education: this.formBuilder.array(this.buildEducationForm()),
       id: this.loggedInUser.id
 
     });
   }
 
-  buildExperienceBlock(): FormGroup {
+  buildExperienceBlock(): FormGroup[] {
+    let expArr =this.loggedInUserResume?.experienceBlocks;
+    if(this.loggedInUserResume)
+    {
+    expArr.forEach((exp: { title: any; company: any; location: any; startDate: any; endDate: any; description: any; }) => {
+      this.expArrForm.push(this.formBuilder.group({
+        title: [exp?.title, [Validators.required]],
+        company: [exp?.company, [Validators.required]],
+        location: [exp?.location, [Validators.required]],
+        startDate: [exp?.startDate, [Validators.required]],
+        endDate: [exp?.endDate, [Validators.required]],
+        description: [exp?.description, [Validators.required]]
+      }))
+    });
+    return this.expArrForm;}
+    else
+    {
+      return [this.addExperienceBlock()];
+    }
+    
+  }
+  addExperienceBlock(): FormGroup {
     return this.formBuilder.group({
       title: ['', [Validators.required]],
       company: ['', [Validators.required]],
@@ -62,6 +85,26 @@ export class ResumePageComponent implements OnInit {
       endDate: ['', [Validators.required]],
       description: ['', [Validators.required]]
     });
+  }
+  buildEducationForm():FormGroup[]{
+    
+    let eduArr =this.loggedInUserResume?.education;
+    if(this.loggedInUserResume)
+    {
+    eduArr.forEach((edu: { level_of_education: any; school_name: any; field: any; startDate: any; endDate: any; }) => {
+      this.eduArrForm.push(this.formBuilder.group({
+        level_of_education: [edu.level_of_education, [Validators.required]],
+        school_name: [edu.school_name, [Validators.required]],
+        field: [edu.field, [Validators.required]],
+        startDate: [edu.startDate, [Validators.required]],
+        endDate: [edu.endDate, [Validators.required]],
+      }))
+    });
+    return this.eduArrForm;}
+    else
+    {
+      return [this.educations()];
+    }
   }
 
   educations(): FormGroup {
@@ -87,9 +130,11 @@ export class ResumePageComponent implements OnInit {
       .pipe(first())
       .subscribe({
         next: () => {
-          this.messageService.clear();
+
+         // this.messageService.clear();
 
           this.messageService.add({ severity: 'success', summary: 'Success' });
+         // this.setResumeType(false);
           //this.router.navigate(['/'], { relativeTo: this.route });
         },
         error: error => {
@@ -108,7 +153,7 @@ export class ResumePageComponent implements OnInit {
 
 
   addExperience() {
-    this.experienceBlocks.insert(0, this.buildExperienceBlock());
+    this.experienceBlocks.insert(0, this.addExperienceBlock());
   }
 
   removeExperience(index: any) {
