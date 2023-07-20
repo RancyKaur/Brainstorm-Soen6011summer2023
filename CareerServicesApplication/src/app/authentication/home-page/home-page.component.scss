@@ -1,0 +1,42 @@
+@import "primeicons/primeicons.css";
+.content{
+    background-color: #f3f2f1;
+    position: relative;
+}
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 100px;
+}
+p-card{
+    margin: 25px 25px;
+}
+
+.profile-card{
+    position: relative;
+}
+
+::ng-deep .profile-card .p-card-header img {
+    position: absolute;
+    width: 150px !important;
+    height: 150px !important;
+    display: inline;
+    border-radius: 50%;
+    margin-top: -75px;
+    margin-left: 100px //centers the image
+}
+
+::ng-deep .profile-card .p-card .p-card-body {
+    padding: 6rem 1.25rem 1.25rem 1.25rem;
+}
+
+::ng-deep .profile-card p-card {
+    margin: 60px 25px;
+}
+
+.floating-btn{
+    position: fixed;
+right:    50px;
+bottom:   50px;
+}

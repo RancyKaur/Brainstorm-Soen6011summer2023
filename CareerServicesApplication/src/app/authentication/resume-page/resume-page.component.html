@@ -8,11 +8,21 @@
     <p style="margin-top: 5px">
       Create or upload resume to help you apply for jobs.
     </p>
+    <p-toast></p-toast>
     <ng-template pTemplate="footer">
       <p-button
+      *ngIf="loggedInUserResume"
+        label="View/Edit Your Resume"
+        class="set_button_align"
+        (click)="setResumeType(true)"
+        
+      ></p-button>
+      <p-button
+      *ngIf="!loggedInUserResume"
         label="Build Your Resume"
         class="set_button_align"
         (click)="setResumeType(true)"
+        
       ></p-button>
       <p-button
         label="Upload Resume"
@@ -334,10 +344,11 @@
                   ></i>
                 </div>
               </div>
-              <button class="btn btn-primary" type="submit" style="width: 100px">
-                Submit
-              </button>
+              
             </div>
+            <button class="btn btn-primary" type="submit" style="width: 100px">
+              Submit
+            </button>
           </div>
         </form>
       </div>
