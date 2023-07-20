@@ -1,1 +1,13 @@
-@import '../sign-up/sign-up.component.scss'
+@import '../sign-up/sign-up.component.scss';
+
+.resume-link{
+    margin: 25px 0;
+}
+.resume-link a{
+    text-decoration: none;
+    color: #3B82F6;
+}
+
+::ng-deep .p-inputtext {
+    margin-left: 0px;
+}

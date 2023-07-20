@@ -218,22 +218,6 @@ export class ResumePageComponent implements OnInit {
         localStorage.setItem('uploadedResumes', JSON.stringify(resumes));
       }
     }
-    // const downloadLink = document.createElement("a");
-    // const fileName = file.name;
-    // let data :any;
-    // localStorage.setItem('uploadedResumes', linkSource);
-    // data = localStorage.getItem('uploadedResumes') ;
-    // downloadLink.href = data;
-    //     downloadLink.download = fileName;
-    //     downloadLink.click();
-
-
-
-
-
-
-
-    // }
 
   }
 
