@@ -48,7 +48,8 @@ export class AddAPostComponent {
       loc: ['', [Validators.required]],
       phone:['', [Validators.required]],
 
-      id: this.loggedInUser.id
+      id: this.loggedInUser.id,
+      postId:[''],
 
     });
   }
@@ -68,7 +69,11 @@ save() {
     return;
   }
 
-  this.accountService.addPost(this.addPostForm.value)
+  let obj = {
+    'userId': [],
+    ...this.addPostForm.value
+  }
+  this.accountService.addPost(obj)
     .pipe(first())
     .subscribe({
       next: () => {
