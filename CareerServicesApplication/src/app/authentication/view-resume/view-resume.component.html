@@ -1,0 +1,274 @@
+<div class="container-fluid form-align" >
+    <p-card header="Build Your Resume" [style]="{ width: '650px' }">
+      <i
+        class="pi pi-arrow-left abs-icon"
+        style="font-size: 1.5rem"
+      ></i>
+      <div>
+        <div class="col-md-12">
+          <form
+            novalidate
+  
+            [formGroup]="resumeBuilderForm"
+            autocomplete="false"
+          >
+            <div class="textfield">
+              <label htmlFor="first name" for="firstNameId"
+                >First Name<span style="color: red">*</span></label
+              >
+              <input
+                type="text"
+                pInputText
+                id="firstNameId"
+                formControlName="firstName"
+                aria-describedby="firtname-help"
+                placeholder="First Name"
+                class="set_input"
+  
+              />
+  
+            </div>
+            <div class="textfield">
+              <label htmlFor="first name" for="lastNameId"
+                >Last Name<span style="color: red">*</span></label
+              >
+              <input
+                type="text"
+                pInputText
+                id="lastNameId"
+                formControlName="lastName"
+                aria-describedby="lastname-help"
+                placeholder="Last Name"
+                class="set_input"
+              />
+  
+            </div>
+            <div class="textfield">
+              <label htmlFor="email Id" for="emailId"
+                >Email<span style="color: red">*</span></label
+              >
+              <input
+                type="email"
+                pInputText
+                id="emailId"
+                formControlName="email"
+                aria-describedby="lastname-help"
+                placeholder="Email"
+                class="set_input"
+              />
+  
+            </div>
+            <div class="textfield">
+              <label htmlFor="phone Id" for="phoneId"
+                >Phone<span style="color: red">*</span></label
+              >
+              <input
+                type="tel"
+                pInputText
+                id="phoneId"
+                formControlName="phone"
+                aria-describedby="phone-help"
+                placeholder="Phone Number"
+                class="set_input"
+              />
+  
+            </div>
+            <div class="flexContainer">
+              <div class="exp-align">
+                <label for="experienceId" class="heading-label">Experience</label>
+  
+              </div>
+              <div
+                formArrayName="experienceBlocks"
+                *ngFor="
+                  let experience of experienceBlocks.controls;
+                  let i = index
+                "
+              >
+                <div
+                  [ngClass]="{
+                    'experience-block': experienceBlocks.controls.length > 1
+                  }"
+                  [formGroupName]="i"
+                >
+                  <div class="textfield">
+                    <label attr.for="{{ 'titleId' + i }}">Title</label>
+                    <input
+                      type="text"
+                      pInputText
+                      id="{{ 'titleId' + i }}"
+                      formControlName="title"
+                      aria-describedby="title-help"
+                      placeholder="Ex: Software Engineer"
+                      class="set_input"
+                    />
+                  </div>
+                  <div class="textfield">
+                    <label attr.for="{{ 'companyId' + i }}">Company</label>
+                    <input
+                      type="text"
+                      pInputText
+                      id="{{ 'companyId' + i }}"
+                      formControlName="company"
+                      aria-describedby="company-help"
+                      placeholder="Ex: Microsoft"
+                      class="set_input"
+                    />
+                  </div>
+                  <div class="textfield">
+                    <label attr.for="{{ 'locationId' + i }}">Location</label>
+                    <input
+                      type="text"
+                      pInputText
+                      id="{{ 'locationId' + i }}"
+                      formControlName="location"
+                      aria-describedby="location-help"
+                      placeholder="Ex: London, United Kingdom"
+                      class="set_input"
+                    />
+                  </div>
+                  <div class="row">
+                    <div class="textfield col-md-6">
+                      <label attr.for="{{ 'startDateId' + i }}">Start Date</label>
+                      <input
+                        type="date"
+                        pInputText
+                        id="{{ 'startDateId' + i }}"
+                        formControlName="startDate"
+                        aria-describedby="date-help"
+                        placeholder=""
+                        class="set_input"
+                      />
+                    </div>
+                    <div class="textfield col-md-6">
+                      <label attr.for="{{ 'endDateId' + i }}">End Date</label>
+                      <input
+                        type="date"
+                        pInputText
+                        id="{{ 'endDateId' + i }}"
+                        formControlName="endDate"
+                        aria-describedby="date-help"
+                        placeholder=""
+                        class="set_input"
+                      />
+                    </div>
+                  </div>
+                  <div class="textfield">
+                    <label attr.for="{{ 'descId' + i }}">Description</label>
+                    <textarea
+                      type="text"
+                      rows="5"
+                      pInputTextarea
+                      id="{{ 'descId' + i }}"
+                      formControlName="description"
+                      aria-describedby="description-help"
+                      placeholder="Description"
+                      class="set_input"
+                    ></textarea>
+                  </div>
+                  <div class="trash-icon">
+                    <hr *ngIf="i !== experienceBlocks.controls.length - 1" />
+  
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="flexContainer">
+              <div class="exp-align">
+                <label for="experienceId" class="heading-label">Education</label>
+  
+              </div>
+              <div
+                formArrayName="education"
+                *ngFor="let experience of education.controls; let i = index"
+              >
+                <div
+                  [ngClass]="{
+                    'experience-block': education.controls.length > 1
+                  }"
+                  [formGroupName]="i"
+                >
+                  <div class="textfield">
+                    <label attr.for="{{ 'titleId' + i }}"
+                      >Level of Education</label
+                    >
+                    <input
+                      type="text"
+                      pInputText
+                      id="{{ 'titleId' + i }}"
+                      formControlName="level_of_education"
+                      aria-describedby="education-help"
+                      placeholder="Ex: Bachelors, Diploma, High School"
+                      class="set_input"
+                    />
+                  </div>
+                  <div class="textfield">
+                    <label attr.for="{{ 'companyId' + i }}">Field of Study</label>
+                    <input
+                      type="text"
+                      pInputText
+                      id="{{ 'companyId' + i }}"
+                      formControlName="field"
+                      aria-describedby="field-help"
+                      placeholder="Ex: Computer Science"
+                      class="set_input"
+                    />
+                  </div>
+                  <div class="textfield">
+                    <label attr.for="{{ 'locationId' + i }}">School Name</label>
+                    <input
+                      type="text"
+                      pInputText
+                      id="{{ 'locationId' + i }}"
+                      formControlName="school_name"
+                      aria-describedby="schoolName-help"
+                      placeholder="Ex: Concordia University"
+                      class="set_input"
+                    />
+                  </div>
+                  <div class="row">
+                    <div class="textfield col-md-6">
+                      <label attr.for="{{ 'startDateId' + i }}">Start Date</label>
+                      <input
+                        type="date"
+                        pInputText
+                        id="{{ 'startDateId' + i }}"
+                        formControlName="startDate"
+                        aria-describedby="date-help"
+                        placeholder=""
+                        class="set_input"
+                      />
+                    </div>
+                    <div class="textfield col-md-6">
+                      <label attr.for="{{ 'endDateId' + i }}">End Date</label>
+                      <input
+                        type="date"
+                        pInputText
+                        id="{{ 'endDateId' + i }}"
+                        formControlName="endDate"
+                        aria-describedby="date-help"
+                        placeholder=""
+                        class="set_input"
+                      />
+                    </div>
+                  </div>
+                  <div class="trash-icon">
+                    <hr *ngIf="i !== experienceBlocks.controls.length - 1" />
+  
+                  </div>
+                </div>
+  
+              </div>
+              <button class="btn btn-primary" type="submit" style="width: 100px">
+                Submit
+              </button>
+            </div>
+          </form>
+  
+  
+        </div>
+      </div>
+    </p-card>
+  </div>
+  
