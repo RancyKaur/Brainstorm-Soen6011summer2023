@@ -1,4 +1,5 @@
 <app-header></app-header>
+<p-toast></p-toast>
 <div class="container-fluid set_alignment" *ngIf="!selected">
   <p-card [style]="{ width: '360px' }">
     <ng-template pTemplate="header">
@@ -15,14 +16,14 @@
         label="View/Edit Your Resume"
         class="set_button_align"
         (click)="setResumeType(true)"
-        
+
       ></p-button>
       <p-button
       *ngIf="!loggedInUserResume"
         label="Build Your Resume"
         class="set_button_align"
         (click)="setResumeType(true)"
-        
+
       ></p-button>
       <p-button
         label="Upload Resume"
@@ -63,6 +64,7 @@
               aria-describedby="firtname-help"
               placeholder="First Name"
               class="set_input"
+
             />
             <div
               *ngIf="
@@ -344,17 +346,24 @@
                   ></i>
                 </div>
               </div>
-              
+
             </div>
             <button class="btn btn-primary" type="submit" style="width: 100px">
               Submit
             </button>
           </div>
         </form>
+        <div style="    padding: 20px;
+        padding-left: 0px;">
+          <p-checkbox [(ngModel)]="selectedResumeType" value="form" (onChange)="toggleResumeType($event)"  inputId="ny"></p-checkbox>
+        <label for="ny" style="margin-left: 6px;">Set as default</label>
+        </div>
+
       </div>
     </div>
   </p-card>
 </div>
+
 <div class="container-fluid set_alignment" *ngIf="selected && !resumeTypeBuild">
   <p-card [style]="{ width: '360px' }">
 
@@ -370,10 +379,17 @@
 
     <ng-template pTemplate="footer">
       <input pInputText (change)="onFileSelected($event)" class="resumeText" type="file" id="file">
-      <button pButton (click)="displayPdf()" style="margin-top: 10px;">View Resume</button>
+      <button pButton (click)="displayPdf()" style="margin-top: 10px;" *ngIf="fileName != null">{{fileName}}</button>
+      <div style="    padding: 20px;
+      padding-left: 0px;">
+        <p-checkbox [(ngModel)]="selectedResumeType1" (onChange)="toggleResumeType($event)"  value="upload" inputId="ny1"></p-checkbox>
+      <label for="ny1" style="margin-left: 6px;">Set as default</label>
+      </div>
+
     </ng-template>
 
+
 </p-card>
-<p-toast></p-toast>
+
 </div>
 

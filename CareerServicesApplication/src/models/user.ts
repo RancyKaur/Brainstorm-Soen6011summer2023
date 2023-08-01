@@ -5,8 +5,11 @@ export class User {
   firstName?: string;
   lastName?: string;
   token?: string;
-  userType?:any;
-  companyName?:any;
-  companyAddress?:any;
-  companyPhone?:any;
+  userType?: any;
+  companyName?: any;
+  companyAddress?: any;
+  companyPhone?: any;
+  desiredTitle?: any;
+  introduction?: any;
+  default?:any;
 }

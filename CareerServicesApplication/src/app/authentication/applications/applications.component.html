@@ -6,22 +6,15 @@
       style="font-size: 1.5rem"
       (click)="toggle()"
     ></i>
-    <div class="card flex justify-content-center">
+    <div class="card flex justify-content-center" >
       <p-card>
-        <p class="m-0 margin-nil">
-          <span><span style="font-weight: 500;">Orange Business</span> has an update on your Job
-            Application</span><span class="font-time"> 25 minutes ago</span>
+        <p class="m-0 margin-nil" *ngFor="let notification of userNotifications">
+          <span><b>{{notification.companyName}}</b> has <span *ngIf="notification.isAccepted">accepted</span>
+          <span *ngIf="!notification.isAccepted">rejected</span>  your Job
+            Application for {{notification.job_title}}</span><span class="font-time"> 25 minutes ago</span>
         </p>
         <hr>
-        <p class="m-0 margin-nil">
-          <span><span style="font-weight: 500;">Orange Business</span> has an update on your Job
-            Application</span><span class="font-time"> 25 minutes ago</span>
-        </p>
-        <hr>
-        <p class="m-0 margin-nil">
-          <span><span style="font-weight: 500;">Orange Business</span> has an update on your Job
-            Application</span><span class="font-time"> 25 minutes ago</span>
-        </p>
+
       </p-card>
     </div>
   </p-card>
