@@ -1,0 +1,57 @@
+@import '../landing-page/landing-page.component.scss';
+
+.set_alignment{
+    height: calc(100vh - 75px) ;
+}
+
+label{
+    width: 100%;
+    padding: 5px 0;
+}
+h3{
+    padding: 25px 0 0 0;
+}
+.form-align{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f2f1;
+    height: 100%;
+    padding: 50px 0;
+  }
+
+::ng-deep  .p-card .p-card-body {
+    position: relative;
+}
+
+::ng-deep  .p-card .p-card-title {
+    margin-left: 56px;
+}
+
+::ng-deep .p-card .abs-icon {
+    cursor: pointer;
+    position: absolute;
+    padding: 0;
+    top: 26px;
+}
+
+.custom-card{
+    border: 1px solid grey;
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.custom-card .more-widthz{
+    width: 25%;
+}
+.custom-card div a, .custom-card-heading div a{
+    text-decoration: none;
+}
+.custom-card-heading{
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    font-weight: bold;
+}
