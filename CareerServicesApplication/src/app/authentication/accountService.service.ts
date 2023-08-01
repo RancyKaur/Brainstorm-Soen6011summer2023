@@ -80,6 +80,31 @@ export class AccountService {
       }));
   }
 
+  updatePost(id: string, params: any) {
+
+    let allposts:any;
+    let flag;
+   allposts = JSON.parse(localStorage.getItem('Posts')!);
+    allposts.forEach((elem:any)=>{
+      if(elem.postId == id)
+    {
+      let posts = allposts.filter((x:any) => x.postId != id);
+      localStorage.removeItem('Posts');
+
+          posts.push(params);
+          localStorage.setItem('Posts', JSON.stringify(posts));
+
+
+      flag = true;
+    }
+    else{
+      flag = false;
+    }
+  });
+
+return flag;
+
+}
 
 
   delete(id: string) {
