@@ -1,0 +1,40 @@
+<app-header></app-header>
+
+<!-- <div class="card" *ngIf="selected && resumeTypeBuild"> -->
+<div class="container-fluid form-align">
+  <p-card header="Job Post" [style]="{ width: '650px' }">
+    <i class="pi pi-arrow-left abs-icon" style="font-size: 1.5rem" routerLink="/homepage"></i>
+    <div>
+      <label
+        >Job Title :
+        <span style="font-weight: bold">{{postData.job_title}}</span></label
+      >
+      <label
+        >Job Description : <span style="font-weight: bold">{{postData.job_desc}}</span></label
+      >
+      <label>Location : <span style="font-weight: bold">{{postData.loc}}</span></label>
+    </div>
+    <h3>Applications</h3>
+    <div *ngIf="usersData.length>0">
+    <div class="custom-card-heading" >
+      <div class="more-width">Name of Applicant</div>
+      <a>Resume</a>
+      <div>
+        <a  style="color: green"></a>&nbsp;&nbsp;<a >Action</a>
+      </div>
+    </div>
+    <div class="custom-card" *ngFor="let i of usersData">
+      <div class="more-width">{{i.firstName}}&nbsp;{{i.lastName}}</div>
+      <a href="javascript:void(0)" (click)="viewResume(i)">View Resume</a>
+      <div>
+        <a href="javascript:void(0)" class="pi pi-check" style="color: green" (click)="sendNotification(i,true)"></a>&nbsp;&nbsp;
+        <a href="javascript:void(0)"  class="pi pi-times" style="color: red" (click)="sendNotification(i,false)"></a>
+      </div>
+    </div>
+  </div>
+    <div *ngIf="usersData.length == 0">
+      <p>No Applications yet.</p>
+    </div>
+
+  </p-card>
+</div>

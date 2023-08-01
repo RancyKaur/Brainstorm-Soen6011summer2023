@@ -22,6 +22,14 @@ import { HeaderComponent } from './header/header.component';
 import { TooltipModule } from 'primeng/tooltip';
 import { AddAPostComponent } from './add-apost/add-apost.component';
 import { ApplicationsComponent } from './applications/applications.component';
+import { PostPageComponent } from './post-page/post-page.component';
+
+import { EditPostComponent } from './edit-post/edit-post.component';
+import { MessageService } from 'primeng/api';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { CheckboxModule } from 'primeng/checkbox';
+import { ViewResumeComponent } from './view-resume/view-resume.component';
+
 @NgModule({
   declarations: [
     LoginComponent,
@@ -33,6 +41,13 @@ import { ApplicationsComponent } from './applications/applications.component';
     HeaderComponent,
     AddAPostComponent,
     ApplicationsComponent,
+
+    PostPageComponent,
+
+    EditPostComponent,
+      ViewResumeComponent,
+
+
   ],
   imports: [
     CommonModule,
@@ -45,11 +60,13 @@ import { ApplicationsComponent } from './applications/applications.component';
     DividerModule,
     ToastModule,
     HttpClientModule,
-    TooltipModule
+    TooltipModule,
+    RadioButtonModule,
+    CheckboxModule
 
 
 
   ],
-  providers:[AccountService,]
+  providers:[AccountService,MessageService]
 })
 export class AuthenticationModule { }
