@@ -1,1 +1,103 @@
-<p>home-page works!</p>
+<app-header></app-header>
+<div class="content">
+  <h3 style="display: block; padding: 25px 125px;">Job Posts</h3>
+  <div class="cards-small" *ngIf="loggedInUser.userType == 'student'">
+    <p-card *ngFor="let i of allposts"
+      header="{{i.job_title}}"
+      subheader="{{i.companyName}}"
+      [style]="{ width: '360px', height: '100%' }"
+    >
+      <ng-template pTemplate="header">
+        <img
+          alt="Card"
+          src="https://primefaces.org/cdn/primeng/images/usercard.png"
+        />
+      </ng-template>
+      <p>
+       {{i.job_desc}}
+      </p>
+
+      <ng-template pTemplate="footer" >
+
+        <p-button *ngIf="!i.isApplied" label="Apply"  (click)="applyJob(i)" icon="pi pi-check" [style]="{ padding: '12px 25px 12px 20px', margin: '0 20px 0 0' }"></p-button>
+        <p-button *ngIf="i.isApplied" label="Applied" styleClass="p-button-success" (click)="applyJob(i)"  [style]="{ padding: '12px 25px 12px 20px', margin: '0 20px 0 0' }"></p-button>
+      </ng-template>
+    </p-card>
+
+  </div>
+  <div class="cards-small" *ngIf="loggedInUser.userType == 'employer' ">
+    <p-card *ngFor="let i of selectedposts"
+      header="{{i.job_title}}"
+      subheader="{{i.companyName}}"
+      [style]="{ width: '360px', height: '100%' }"
+    (click)="redirectToPost(i)"
+      >
+      <ng-template pTemplate="header">
+        <img
+          alt="Card"
+          src="https://primefaces.org/cdn/primeng/images/usercard.png"
+        />
+      </ng-template>
+      <p>
+       {{i.job_desc}}
+      </p>
+      <ng-template pTemplate="footer">
+        <p-button label="Edit" (click)="editJob(i.postId)" icon="pi pi-file-edit" [style]="{ padding: '12px 25px 12px 20px', margin: '0 20px 0 0' }"></p-button>
+        <p-button label="Delete" (click)="deletePost(i.postId)" styleClass="p-button-danger" icon="pi pi-trash" [style]="{ padding: '12px 25px 12px 20px', margin: '0 20px 0 0' }"></p-button>
+      </ng-template>
+    </p-card>
+
+  </div>
+
+  <div class="cards-small" *ngIf="loggedInUser.userType == 'admin' ">
+    <p-card *ngFor="let i of allposts"
+      header="{{i.job_title}}"
+      subheader="{{i.companyName}}"
+      [style]="{ width: '360px', height: '100%' }"
+    (click)="redirectToPost(i)"
+      >
+      <ng-template pTemplate="header">
+        <img
+          alt="Card"
+          src="https://primefaces.org/cdn/primeng/images/usercard.png"
+        />
+      </ng-template>
+      <p>
+       {{i.job_desc}}
+      </p>
+      <ng-template pTemplate="footer">
+        <p-button label="Edit" (click)="editJob(i.postId)" icon="pi pi-file-edit" [style]="{ padding: '12px 25px 12px 20px', margin: '0 20px 0 0' }"></p-button>
+        <p-button label="Delete" (click)="deletePost(i.postId)" styleClass="p-button-danger" icon="pi pi-trash" [style]="{ padding: '12px 25px 12px 20px', margin: '0 20px 0 0' }"></p-button>
+      </ng-template>
+    </p-card>
+
+  </div>
+  <h3 style="display: block; padding: 25px 125px;" *ngIf="loggedInUser.userType == 'employer' || loggedInUser.userType == 'admin' ">Candidates</h3>
+  <div class="cards profile-card" *ngIf="loggedInUser.userType == 'employer' || loggedInUser.userType == 'admin' ">
+
+    <p-card *ngFor="let i of allStudents"
+    header="{{i.firstName}}"
+    subheader="{{i.desiredTitle}}"
+      [style]="{ width: '360px', height: '100%' }"
+
+    >
+      <ng-template pTemplate="header" >
+        <img
+          alt="Card"
+          src="../../../assets/portrait1.jpg"
+        />
+      </ng-template>
+      <p>
+       {{i.introduction}}
+      </p>
+      <ng-template pTemplate="footer">
+        <!-- <p-button label="Message" [style]="{ padding: '12px 25px 12px 20px' }"></p-button> -->
+        <p-button label="Delete" (click)="deleteStudent(i.id)" *ngIf="loggedInUser.userType=='admin'" styleClass="p-button-danger" icon="pi pi-trash" [style]="{ padding: '12px 25px 12px 20px', margin: '0 20px 0 0' }"></p-button>
+
+      </ng-template>
+    </p-card>
+  </div>
+  <p-button [routerLink]="['/addpost']" label="Post a Job" class="floating-btn" *ngIf="loggedInUser.userType == 'employer'"></p-button>
+
+</div>
+<p-toast></p-toast>

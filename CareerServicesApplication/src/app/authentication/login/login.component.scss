@@ -27,3 +27,7 @@ img{
 button{
   padding: 10px;
 }
+
+::ng-deep .p-inputtext {
+  margin-left: 0px;
+}

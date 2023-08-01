@@ -8,11 +8,21 @@
     <p style="margin-top: 5px">
       Create or upload resume to help you apply for jobs.
     </p>
+    <p-toast></p-toast>
     <ng-template pTemplate="footer">
       <p-button
+      *ngIf="loggedInUserResume"
+        label="View/Edit Your Resume"
+        class="set_button_align"
+        (click)="setResumeType(true)"
+        
+      ></p-button>
+      <p-button
+      *ngIf="!loggedInUserResume"
         label="Build Your Resume"
         class="set_button_align"
         (click)="setResumeType(true)"
+        
       ></p-button>
       <p-button
         label="Upload Resume"
@@ -334,275 +344,17 @@
                   ></i>
                 </div>
               </div>
-              <button class="btn btn-primary" type="submit" style="width: 100px">
-                Submit
-              </button>
+              
             </div>
+            <button class="btn btn-primary" type="submit" style="width: 100px">
+              Submit
+            </button>
           </div>
         </form>
       </div>
     </div>
   </p-card>
 </div>
-<!-- <div class="card form-align">
-  <h5 class="card-header">Build Your Resume</h5>
-  <div class="card-body">
-    <form novalidate (ngSubmit)="save()" [formGroup]="resumeBuilderForm">
-      <div>
-        <button (click)="toggle()">Back</button>
-      </div>
-      <div class="form-row">
-        <div class="form-group col-md-5">
-          <label for="firstNameId">First Name</label>
-          <input
-            class="form-control"
-            id="firstNameId"
-            type="text"
-            placeholder="First Name"
-            formControlName="firstName"
-          />
-        </div>
-
-        <div class="form-group col-md-5">
-          <label for="lastNameId">Last Name</label>
-          <input
-            class="form-control"
-            id="lastNameId"
-            type="text"
-            placeholder="Last Name"
-            formControlName="lastName"
-          />
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group col-md-10">
-          <label for="emailId">Email</label>
-          <input
-            class="form-control"
-            id="emailId"
-            type="email"
-            placeholder="Email"
-            formControlName="email"
-          />
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group col-md-10">
-          <label for="phoneId">Phone</label>
-          <input
-            class="form-control"
-            id="phoneId"
-            type="tel"
-            placeholder="Phone"
-            formControlName="phone"
-          />
-        </div>
-      </div>
-
-      <br />
-      <div class="flexContainer">
-        <h5>Experience</h5>
-        <div>
-          <i
-            class="pi pi-plus-circle"
-            style="font-size: 1.5rem"
-            (click)="addExperience()"
-          ></i>
-        </div>
-      </div>
-      <div
-        formArrayName="experienceBlocks"
-        *ngFor="let experience of experienceBlocks.controls; let i = index"
-      >
-        <div
-          [ngClass]="{
-            'experience-block': experienceBlocks.controls.length > 1
-          }"
-          [formGroupName]="i"
-        >
-          <div class="form-row">
-            <div class="form-group col-md-10">
-              <label attr.for="{{ 'titleId' + i }}">Title</label>
-              <input
-                class="form-control"
-                id="{{ 'titleId' + i }}"
-                type="text"
-                placeholder="Ex: Software Engineer"
-                formControlName="title"
-              />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group col-md-10">
-              <label attr.for="{{ 'companyId' + i }}">Company</label>
-              <input
-                class="form-control"
-                id="{{ 'companyId' + i }}"
-                type="text"
-                placeholder="Ex: Microsoft"
-                formControlName="company"
-              />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group col-md-10">
-              <label attr.for="{{ 'locationId' + i }}">Location</label>
-              <input
-                class="form-control"
-                id="{{ 'locationId' + i }}"
-                type="text"
-                placeholder="Ex: London, United Kingdom"
-                formControlName="location"
-              />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group col-md-5">
-              <label attr.for="{{ 'startDateId' + i }}">Start Date</label>
-              <input
-                class="form-control"
-                id="{{ 'startDateId' + i }}"
-                type="date"
-                placeholder=""
-                formControlName="startDate"
-              />
-            </div>
-            <div class="form-group col-md-5">
-              <label attr.for="{{ 'endDateId' + i }}">End Date</label>
-              <input
-                class="form-control"
-                id="{{ 'endDateId' + i }}"
-                type="date"
-                placeholder="End Date"
-                formControlName="endDate"
-              />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group col-md-10">
-              <label attr.for="{{ 'descId' + i }}">Description</label>
-              <textarea
-                class="form-control"
-                rows="5"
-                id="{{ 'descId' + i }}"
-                type="text"
-                placeholder="Description"
-                formControlName="description"
-              ></textarea>
-            </div>
-          </div>
-          <hr *ngIf="i !== experienceBlocks.controls.length - 1" />
-
-          <i
-            class="pi pi-trash"
-            style="font-size: 1.5rem"
-            (click)="removeExperience(i)"
-          ></i>
-        </div>
-      </div>
-
-      <div class="flexContainer">
-        <h5>Education</h5>
-
-        <i
-          class="pi pi-plus-circle"
-          style="font-size: 1.5rem"
-          (click)="addEducation()"
-        ></i>
-      </div>
-      <div
-        formArrayName="education"
-        *ngFor="let experience of education.controls; let i = index"
-      >
-        <div
-          [ngClass]="{
-            'experience-block': education.controls.length > 1
-          }"
-          [formGroupName]="i"
-        >
-          <div class="form-row">
-            <div class="form-group col-md-10">
-              <label attr.for="{{ 'titleId' + i }}">Level of education</label>
-              <input
-                class="form-control"
-                id="{{ 'titleId' + i }}"
-                type="text"
-                placeholder="Ex: Software Engineer"
-                formControlName="level_of_education"
-              />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group col-md-10">
-              <label attr.for="{{ 'companyId' + i }}">Field of study</label>
-              <input
-                class="form-control"
-                id="{{ 'companyId' + i }}"
-                type="text"
-                placeholder="Ex: Microsoft"
-                formControlName="field"
-              />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group col-md-10">
-              <label attr.for="{{ 'locationId' + i }}">School name</label>
-              <input
-                class="form-control"
-                id="{{ 'locationId' + i }}"
-                type="text"
-                placeholder="Ex: London, United Kingdom"
-                formControlName="school_name"
-              />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group col-md-5">
-              <label attr.for="{{ 'startDateId' + i }}">Start Date</label>
-              <input
-                class="form-control"
-                id="{{ 'startDateId' + i }}"
-                type="date"
-                placeholder=""
-                formControlName="startDate"
-              />
-            </div>
-            <div class="form-group col-md-5">
-              <label attr.for="{{ 'endDateId' + i }}">End Date</label>
-              <input
-                class="form-control"
-                id="{{ 'endDateId' + i }}"
-                type="date"
-                placeholder="End Date"
-                formControlName="endDate"
-              />
-            </div>
-          </div>
-
-          <hr *ngIf="i !== experienceBlocks.controls.length - 1" />
-
-          <i
-            class="pi pi-trash"
-            style="font-size: 1.5rem"
-            (click)="removeEducation(i)"
-          ></i>
-        </div>
-      </div>
-      <button class="btn btn-primary" type="submit" style="width: 100px">
-        Submit
-      </button>
-    </form>
-  </div>
-</div> -->
 <div class="container-fluid set_alignment" *ngIf="selected && !resumeTypeBuild">
   <p-card [style]="{ width: '360px' }">
 

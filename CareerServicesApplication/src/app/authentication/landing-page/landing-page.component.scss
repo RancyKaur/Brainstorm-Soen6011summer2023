@@ -9,6 +9,14 @@
   scrollbar-width: none;  /* Firefox */
   background-color: #f3f2f1;
 }
+.form-align{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f2f1;
+  height: 100%;
+  padding: 50px 0;
+}
 .container::-webkit-scrollbar {
   display: none;
 }
