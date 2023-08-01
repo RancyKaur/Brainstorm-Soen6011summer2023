@@ -28,7 +28,6 @@ import { EditPostComponent } from './edit-post/edit-post.component';
 import { MessageService } from 'primeng/api';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { CheckboxModule } from 'primeng/checkbox';
-import { ViewResumeComponent } from './view-resume/view-resume.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +44,6 @@ import { ViewResumeComponent } from './view-resume/view-resume.component';
     PostPageComponent,
 
     EditPostComponent,
-      ViewResumeComponent,
 
 
   ],

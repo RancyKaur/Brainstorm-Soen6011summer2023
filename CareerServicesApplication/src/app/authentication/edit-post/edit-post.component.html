@@ -1,0 +1,141 @@
+<app-header></app-header>
+
+<!-- <div class="card" *ngIf="selected && resumeTypeBuild"> -->
+<div class="container-fluid form-align" *ngIf="postData">
+  <p-card header="Edit Job" [style]="{ width: '650px' }">
+    <i
+      class="pi pi-arrow-left abs-icon"
+      style="font-size: 1.5rem"
+      (click)="toggle()"
+    ></i>
+    <div>
+      <div class="col-md-12">
+        <form
+          novalidate
+          (ngSubmit)="onSubmit()"
+          [formGroup]="editPostForm"
+          autocomplete="false"
+        >
+          <div class="textfield">
+            <label
+              >Company Name<span style="color: red">*</span></label
+            >
+            <input
+              type="text"
+              pInputText
+              formControlName="companyName"
+
+              placeholder="Company Name"
+              class="set_input"
+            />
+            <div
+              *ngIf="
+                submitted && editPostForm.controls['companyName'].invalid
+              "
+              class="invalid-feedback"
+            >
+              <div>Company Name is required</div>
+            </div>
+          </div>
+          <div class="textfield">
+            <label
+              >Job Title<span style="color: red">*</span></label
+            >
+            <input
+              type="text"
+              pInputText
+
+              formControlName="job_title"
+
+              placeholder="Job Title"
+              class="set_input"
+            />
+            <div
+              *ngIf="
+                submitted && editPostForm.controls['job_title'].invalid
+              "
+              class="invalid-feedback"
+            >
+              <div>Job title is required</div>
+            </div>
+          </div>
+          <div class="textfield">
+            <label
+              >Job Description<span style="color: red">*</span></label
+            >
+            <textarea
+              type="text"
+              rows="5"
+              pInputTextarea
+
+              formControlName="job_desc"
+
+              placeholder="Job Description"
+              class="set_input"
+            ></textarea>
+            <div
+              *ngIf="
+                submitted && editPostForm.controls['job_desc'].invalid
+              "
+              class="invalid-feedback"
+            >
+              <div>Job Description is required</div>
+            </div>
+          </div>
+          <div class="textfield">
+            <label
+              >Location<span style="color: red">*</span></label
+            >
+            <input
+              type="text"
+              pInputText
+              formControlName="loc"
+
+              placeholder="Location"
+              class="set_input"
+            />
+            <div
+              *ngIf="
+                submitted && editPostForm.controls['loc'].invalid
+              "
+              class="invalid-feedback"
+            >
+              <div>Location is required</div>
+            </div>
+          </div>
+          <div class="textfield">
+            <label
+              >Contact<span style="color: red">*</span></label
+            >
+            <input
+              type="number"
+              pInputText
+
+              formControlName="phone"
+
+              placeholder="Phone Number"
+              class="set_input"
+            />
+            <div
+              *ngIf="
+                submitted && editPostForm.controls['phone'].invalid
+              "
+              class="invalid-feedback"
+            >
+              <div>Phone Number is required</div>
+            </div>
+          </div>
+          <button
+                class="btn btn-primary"
+                type="submit"
+                style="width: 100px; margin:25px 0 0 0"
+              >
+                Update
+              </button>
+        </form>
+      </div>
+    </div>
+  </p-card>
+</div>
+
+<p-toast></p-toast>
