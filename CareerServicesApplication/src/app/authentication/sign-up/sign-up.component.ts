@@ -41,7 +41,7 @@ export class SignUpComponent {
     });
     if(this.route.snapshot.params['id'] == 'student')
     {
-      this.form.controls['fullName'].setValidators(Validators.required);
+      this.form.controls['firstName'].setValidators(Validators.required);
       this.form.controls['lastName'].setValidators(Validators.required);
 
     }
@@ -72,7 +72,10 @@ export class SignUpComponent {
         next: () => {
           this.messageService.clear();
           this.messageService.add({ severity: 'success', summary: 'Success' });
-          this.router.navigate(['/'], { relativeTo: this.route });
+          setTimeout(()=>{
+
+            this.router.navigate(['/'], { relativeTo: this.route });
+          },1000)
         },
         error: error => {
           this.messageService.add({  severity: 'warn', summary: 'This email is already registered, Please Login',});
@@ -81,3 +84,4 @@ export class SignUpComponent {
       });
   }
 }
+

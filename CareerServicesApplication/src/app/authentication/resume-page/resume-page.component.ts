@@ -18,8 +18,8 @@ export interface SelectedFiles {
   providers: [MessageService]
 })
 export class ResumePageComponent implements OnInit {
-  expArrForm:FormGroup[]=[];
-  eduArrForm:FormGroup[]=[];
+  expArrForm: FormGroup[] = [];
+  eduArrForm: FormGroup[] = [];
   resumeBuilderForm: FormGroup;
   loggedInUser: any;
   loggedInUserResume: any;
@@ -30,6 +30,10 @@ export class ResumePageComponent implements OnInit {
   pdfSrc: any;
   elementRef: ElementRef;
   submitted: boolean;
+  fileName: any;
+  selectedResumeType: any;
+  selectedResumeType1: any;
+
   constructor(private formBuilder: FormBuilder, private accountService: AccountService,
     private messageService: MessageService,
     private router: Router, private route: ActivatedRoute,
@@ -37,44 +41,74 @@ export class ResumePageComponent implements OnInit {
     private renderer: Renderer2) {
     this.loggedInUser = JSON.parse(localStorage.getItem('user')!) || [];
 
-    let resume = JSON.parse(localStorage.getItem('Resumes')!) || [];
-    this.loggedInUserResume = resume.find((x: any) => x.id === this.loggedInUser.id);
 
   }
 
   ngOnInit(): void {
+    let resume = JSON.parse(localStorage.getItem('Resumes')!) || [];
+
+    this.loggedInUserResume = resume.find((x: any) => x.id === this.loggedInUser.id);
+
     this.resumeBuilderForm = this.formBuilder.group({
-      firstName: [this.loggedInUserResume?.firstName || '', Validators.required],
-      lastName: [this.loggedInUserResume?.lastName || '', Validators.required],
-      email: [this.loggedInUserResume?.email || '', [Validators.email, Validators.required]],
+      firstName: [this.loggedInUserResume?.firstName || this.loggedInUser?.firstName, Validators.required],
+      lastName: [this.loggedInUserResume?.lastName || this.loggedInUser?.lastName, Validators.required],
+      email: [this.loggedInUserResume?.email || this.loggedInUser?.username, [Validators.email, Validators.required]],
       phone: [this.loggedInUserResume?.phone || '' ? this.loggedInUserResume.phone : ''],
       experienceBlocks: this.formBuilder.array(this.buildExperienceBlock()),
       education: this.formBuilder.array(this.buildEducationForm()),
-      id: this.loggedInUser.id
+      id: this.loggedInUser.id,
 
     });
+    // this.resumeBuilderForm.disable();
+    if (localStorage.getItem('uploadedResumes')) {
+      const downloadLink = document.createElement("a");
+      let data: any;
+      data = (localStorage.getItem('uploadedResumes'));
+      data = JSON.parse(data);
+      data.forEach((element: any) => {
+
+        if (element.id == this.loggedInUser.id) {
+
+          this.fileName = element.name;
+        }
+      })
+    }
+    let users = JSON.parse(localStorage.getItem("Users")!);
+
+    if (users.find((x: any) => x.id === this.loggedInUser.id)) {
+
+    let user = users.find((x: any) => x.id === this.loggedInUser.id);
+    if(user.default == 'form')
+    {
+      //this.selectedResumeType = 'form';
+    }
+    if(user.default == 'upload')
+    {
+     // this.selectedResumeType1 = true;
+
+    }
+    }
   }
 
   buildExperienceBlock(): FormGroup[] {
-    let expArr =this.loggedInUserResume?.experienceBlocks;
-    if(this.loggedInUserResume)
-    {
-    expArr.forEach((exp: { title: any; company: any; location: any; startDate: any; endDate: any; description: any; }) => {
-      this.expArrForm.push(this.formBuilder.group({
-        title: [exp?.title, [Validators.required]],
-        company: [exp?.company, [Validators.required]],
-        location: [exp?.location, [Validators.required]],
-        startDate: [exp?.startDate, [Validators.required]],
-        endDate: [exp?.endDate, [Validators.required]],
-        description: [exp?.description, [Validators.required]]
-      }))
-    });
-    return this.expArrForm;}
-    else
-    {
+    let expArr = this.loggedInUserResume?.experienceBlocks;
+    if (this.loggedInUserResume) {
+      expArr.forEach((exp: { title: any; company: any; location: any; startDate: any; endDate: any; description: any; }) => {
+        this.expArrForm.push(this.formBuilder.group({
+          title: [exp?.title, [Validators.required]],
+          company: [exp?.company, [Validators.required]],
+          location: [exp?.location, [Validators.required]],
+          startDate: [exp?.startDate, [Validators.required]],
+          endDate: [exp?.endDate, [Validators.required]],
+          description: [exp?.description, [Validators.required]]
+        }))
+      });
+      return this.expArrForm;
+    }
+    else {
       return [this.addExperienceBlock()];
     }
-    
+
   }
   addExperienceBlock(): FormGroup {
     return this.formBuilder.group({
@@ -86,23 +120,22 @@ export class ResumePageComponent implements OnInit {
       description: ['', [Validators.required]]
     });
   }
-  buildEducationForm():FormGroup[]{
-    
-    let eduArr =this.loggedInUserResume?.education;
-    if(this.loggedInUserResume)
-    {
-    eduArr.forEach((edu: { level_of_education: any; school_name: any; field: any; startDate: any; endDate: any; }) => {
-      this.eduArrForm.push(this.formBuilder.group({
-        level_of_education: [edu.level_of_education, [Validators.required]],
-        school_name: [edu.school_name, [Validators.required]],
-        field: [edu.field, [Validators.required]],
-        startDate: [edu.startDate, [Validators.required]],
-        endDate: [edu.endDate, [Validators.required]],
-      }))
-    });
-    return this.eduArrForm;}
-    else
-    {
+  buildEducationForm(): FormGroup[] {
+
+    let eduArr = this.loggedInUserResume?.education;
+    if (this.loggedInUserResume) {
+      eduArr.forEach((edu: { level_of_education: any; school_name: any; field: any; startDate: any; endDate: any; }) => {
+        this.eduArrForm.push(this.formBuilder.group({
+          level_of_education: [edu.level_of_education, [Validators.required]],
+          school_name: [edu.school_name, [Validators.required]],
+          field: [edu.field, [Validators.required]],
+          startDate: [edu.startDate, [Validators.required]],
+          endDate: [edu.endDate, [Validators.required]],
+        }))
+      });
+      return this.eduArrForm;
+    }
+    else {
       return [this.educations()];
     }
   }
@@ -131,10 +164,11 @@ export class ResumePageComponent implements OnInit {
       .subscribe({
         next: () => {
 
-         // this.messageService.clear();
+          // this.messageService.clear();
 
           this.messageService.add({ severity: 'success', summary: 'Success' });
-         // this.setResumeType(false);
+          //this.ngOnInit();
+          this.selected = false;
           //this.router.navigate(['/'], { relativeTo: this.route });
         },
         error: error => {
@@ -189,19 +223,24 @@ export class ResumePageComponent implements OnInit {
 
 
     const file = event.target.files[0];
+    this.fileName = file.name;
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () => {
       console.log(reader.result);
       let linkSource = reader.result as string;
       let resumes: any = [];
+
+
+
       let params = {
         id: this.loggedInUser.id,
         resumeLink: linkSource,
         name: file.name
       }
       if (localStorage.getItem('uplodedResumes')) {
-        resumes = localStorage.getItem('uploadedResumes');
+        resumes = JSON.parse(localStorage.getItem('uploadedResumes')!);
+
         if (resumes.find((x: any) => x.id === this.loggedInUser.id)) {
           let resume = resumes.find((x: any) => x.id === this.loggedInUser.id);
           Object.assign(resume, params);
@@ -232,7 +271,9 @@ export class ResumePageComponent implements OnInit {
       data = JSON.parse(data);
       data.forEach((element: any) => {
 
+
         if (element.id == this.loggedInUser.id) {
+
           downloadLink.href = element.resumeLink;
           downloadLink.download = element.name;
           downloadLink.click();
@@ -240,10 +281,96 @@ export class ResumePageComponent implements OnInit {
       });
 
     }
-    else{
+    else {
       this.messageService.add({ severity: 'warn', summary: 'Kindly upload the resume first' });
 
     }
 
+  }
+
+  toggleResumeType(toggle: any) {
+
+    let users = JSON.parse(localStorage.getItem("Users")!);
+    if (toggle.checked.length > 0) {
+
+      if (this.selectedResumeType && this.selectedResumeType.length>0) {
+        if (toggle.checked[0] == this.selectedResumeType[0]) {
+          if (users.find((x: any) => x.id === this.loggedInUser.id)) {
+
+            let tempUsers = [];
+            if(users.find((x: any) => x.id != this.loggedInUser.id))
+            {
+            tempUsers = users.find((x: any) => x.id != this.loggedInUser.id);
+            }
+            let user = users.find((x: any) => x.id == this.loggedInUser.id);
+            //localStorage.removeItem("Users");
+            if(user.default)
+            {
+              user.default = 'form'
+
+              tempUsers.push(user);
+            }
+            else{
+
+             let data = {
+              'default': 'form',
+              ...user
+            }
+            tempUsers={
+              ...data
+            }
+          }
+            localStorage.setItem("Users", JSON.stringify(tempUsers));
+
+          }
+
+
+        }
+        else {
+          this.selectedResumeType1 = null;
+          this.messageService.add({ severity: 'warn', summary: 'You have already set another resume as default' });
+
+        }
+      }
+
+      else if (this.selectedResumeType1 && this.selectedResumeType1.length > 0) {
+        if (toggle.checked[0] == this.selectedResumeType1[0]) {
+          if (users.find((x: any) => x.id === this.loggedInUser.id)) {
+
+            let tempUsers = [];
+            if(users.find((x: any) => x.id != this.loggedInUser.id))
+            {
+            tempUsers = users.find((x: any) => x.id != this.loggedInUser.id);
+            }
+            let user = users.find((x: any) => x.id == this.loggedInUser.id);
+           // localStorage.removeItem("Users");
+
+            if(user.default)
+            {
+              user.default = 'upload'
+
+              tempUsers.push(user);
+            }
+            else{
+
+             let data = {
+              'default': 'upload',
+              ...user
+            }
+            tempUsers={
+              ...data
+            }
+          }
+            localStorage.setItem("Users", JSON.stringify(tempUsers));
+
+          }
+        }
+        else {
+          this.selectedResumeType = null;
+          this.messageService.add({ severity: 'warn', summary: 'You have already set another resume as default' });
+
+        }
+      }
+    }
   }
 }

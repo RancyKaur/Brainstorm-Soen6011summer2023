@@ -30,8 +30,11 @@ export class UserProfileComponent {
     this.form = this.formBuilder.group({
       firstName: [this.loggedInUser.firstName ? this.loggedInUser.firstName :'' ],
       lastName: [this.loggedInUser.lastName ? this.loggedInUser.lastName : ''],
+      desiredTitle: [this.loggedInUser.desiredTitle ? this.loggedInUser.desiredTitle : ''],
+      introduction: [this.loggedInUser.introduction ? this.loggedInUser.introduction : ''],
+
       companyName : [this.loggedInUser.companyName ? this.loggedInUser.companyName : ''],
-      companyAddress:[this.loggedInUser.companyAddress ? this.loggedInUser.companyAddress : ''],	
+      companyAddress:[this.loggedInUser.companyAddress ? this.loggedInUser.companyAddress : ''],
       companyPhone:[this.loggedInUser.companyPhone ? this.loggedInUser.companyPhone : ''],
       username: [this.loggedInUser.username, [Validators.email,Validators.required]],
       password: [this.loggedInUser.password, [Validators.required]],
@@ -40,14 +43,18 @@ export class UserProfileComponent {
     });
     if(this.loggedInUser.userType == 'student')
     {
-      this.form.controls['fullName'].setValidators(Validators.required);
+      this.form.controls['firstName'].setValidators(Validators.required);
       this.form.controls['lastName'].setValidators(Validators.required);
+      this.form.controls['introduction'].setValidators(Validators.required);
+      this.form.controls['desiredTitle'].setValidators(Validators.required);
+
 
     }
     else{
       this.form.controls['companyName'].setValidators(Validators.required);
-      this.form.controls['companyAddress'].setValidators(Validators.required);	
+      this.form.controls['companyAddress'].setValidators(Validators.required);
       this.form.controls['companyPhone'].setValidators(Validators.required);
+
     }
 
   }
@@ -74,7 +81,10 @@ export class UserProfileComponent {
 
               this.messageService.add({  severity: 'success', summary: 'Profile updated successfuly' });
 
-               // this.router.navigateByUrl('/users');
+              setTimeout(()=>{
+
+                this.router.navigateByUrl('/homepage');
+              },1000)
             },
             error: error => {
               this.messageService.add({  severity: 'warn', summary: 'Invalid username or password',});
@@ -91,5 +101,4 @@ private saveUser() {
         : this.accountService.register(this.form.value);
 }
 }
-
 
