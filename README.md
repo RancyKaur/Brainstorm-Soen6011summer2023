@@ -90,7 +90,56 @@ The link to the project is: https://github.com/users/RancyKaur/projects/3/views/
 
 ## Competitive Analysis
 Competitive analysis plays a crucial role in the software engineering process. Before the launch of a product or a service, it is important to scope out solutions that already exist for your problem statement. A competitive analysis helps understand what works and what doesn’t among features offered by other solution providers in one's app domain. It helps you strategically design a superior experience that allows a product to stand out from the rest.
+
 * Indeed
 * LinkedIn
 * Glassdoor
 * ZipRecruiter
+
+
+## Project Screenshots
+### Register Page
+![Screenshot 2023-08-03 021234](https://github.com/RancyKaur/Brainstorm-Soen6011summer2023/assets/46929029/644841b4-702f-4d03-a9a5-c85b73383be6)
+
+### Register Page for Employer
+![image](https://github.com/RancyKaur/Brainstorm-Soen6011summer2023/assets/46929029/46c91241-8af7-4e2a-b416-2cd5071a3b26)
+
+### Login Page
+![Screenshot 2023-08-03 021032](https://github.com/RancyKaur/Brainstorm-Soen6011summer2023/assets/46929029/b016b754-0a06-4bee-98b2-54fc2445d1ac)
+
+### Employer Homepage
+![image](https://github.com/RancyKaur/Brainstorm-Soen6011summer2023/assets/46929029/a7cf74ab-dbf2-4cfc-8764-e79fbe2d9bc2)
+
+### Employer Profile Page
+![image](https://github.com/RancyKaur/Brainstorm-Soen6011summer2023/assets/46929029/41a31137-b07d-43e2-9c07-dd1fa149c032)
+
+### Post a Job Page for Employer
+![image](https://github.com/RancyKaur/Brainstorm-Soen6011summer2023/assets/46929029/874d79be-1c78-4155-aa52-b2c1615d0a98)
+
+### View Applicants for a Job Post
+![image](https://github.com/RancyKaur/Brainstorm-Soen6011summer2023/assets/46929029/8c26558a-0721-404d-ac06-73658eb52e8a)
+
+### Seeker Homepage
+![image](https://github.com/RancyKaur/Brainstorm-Soen6011summer2023/assets/46929029/d8e1297c-e6bd-40f1-8b39-f4f2e385912d)
+
+### Resume Page
+![image](https://github.com/RancyKaur/Brainstorm-Soen6011summer2023/assets/46929029/bc5a7714-bdf6-4ccd-9a30-231b885afef2)
+
+### Build Your Resume Page
+![image](https://github.com/RancyKaur/Brainstorm-Soen6011summer2023/assets/46929029/f328cfdd-28ba-47d3-8582-4d8f376ffd24)
+
+### Upload Resume Page
+![image](https://github.com/RancyKaur/Brainstorm-Soen6011summer2023/assets/46929029/25d8ff30-47e5-4602-aeba-deec6f7f68e3)
+
+### Apply Options for the Seeker
+![image](https://github.com/RancyKaur/Brainstorm-Soen6011summer2023/assets/46929029/38b56c1f-8dfc-4a21-b994-fa0023b55166)
+
+### Application Sent
+![image](https://github.com/RancyKaur/Brainstorm-Soen6011summer2023/assets/46929029/9d266ad2-361f-4a81-9358-62af5562db8e)
+
+### Appropriate Error Handlings
+![image](https://github.com/RancyKaur/Brainstorm-Soen6011summer2023/assets/46929029/3c07c576-d618-465d-8984-bc8512581afb)
+
+
+
+
