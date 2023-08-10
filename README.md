@@ -141,6 +141,16 @@ Competitive analysis plays a crucial role in the software engineering process. B
 ### Appropriate Error Handlings
 ![image](https://github.com/RancyKaur/Brainstorm-Soen6011summer2023/assets/46929029/3c07c576-d618-465d-8984-bc8512581afb)
 
+### Admin Login Credentials
+![image](https://github.com/RancyKaur/Brainstorm-Soen6011summer2023/assets/46929029/f866a8aa-6309-464a-80cd-d6b6a79707e3)
+
+### Admin Homepage (can delete candidates)
+![image](https://github.com/RancyKaur/Brainstorm-Soen6011summer2023/assets/46929029/3a62c023-c060-4e35-af27-561c01fa6a86)
+
+### Admin not allowed to accept/reject candidate
+![image](https://github.com/RancyKaur/Brainstorm-Soen6011summer2023/assets/46929029/b9974bea-5857-4697-89a7-068358a8c458)
+
+
 
 
 
