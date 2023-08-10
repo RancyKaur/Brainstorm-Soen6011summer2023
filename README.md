@@ -52,6 +52,7 @@ The link to the project is: https://github.com/users/RancyKaur/projects/3/views/
 * Angular 16
 * Typescript
 * UI Library - PRIMENG
+* Twilio API (For Job Tracking Notification)
 
 ## User Stories
 | User Story  | Tasks                  |
